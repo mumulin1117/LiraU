@@ -1,0 +1,559 @@
+[
+  {
+    "customPath": "/hfmbkboqzz/ylvft",
+    "resReplace": {
+      "speechIntelligibilityLoraua": "userBirthday",
+      "audioSnippetLoraua": "userGender",
+      "linguisticAdaptationLoraua": "userBalance",
+      "conversationalAidsLoraua": "userId",
+      "peerTutorLoraua": "userEmail",
+      "localVernacularLoraua": "userBrief",
+      "verbalImprovisationLoraua": "userStatus",
+      "communicativeCompetenceLoraua": "bundleId",
+      "mediaSharingLoraua": "userWeight",
+      "acousticFeedbackLoraua": "equipmentNo",
+      "socialDiscoveryLoraua": "vipExpireTime",
+      "accentReductionLoraua": "userFans",
+      "speechCadenceLoraua": "userLocation",
+      "crossCulturalDialogueLoraua": "userVipStatus",
+      "phoneticDrillLoraua": "userType",
+      "languageEnthusiastLoraua": "userPassword",
+      "audioBroadcastingLoraua": "userHeight",
+      "voiceMessageLoraua": "userName",
+      "communityVibeLoraua": "userFriends",
+      "speechMechanismLoraua": "userAttention",
+      "interactiveFeedLoraua": "userImgUrl",
+      "dialoguePracticeLoraua": "createUserId"
+    },
+    "reqReplace": {
+      "culturalImmersionLoraua": "bundleId"
+    },
+    "systemPath": "/sj/user/selectUserIndexList"
+  },
+  {
+    "customPath": "/godoacxwlytpcwtz/btuwf",
+    "resReplace": {
+      "socialNetworkingLoraua": "userImgUrl",
+      "languageExchangeLoraua": "dynamicImgList",
+      "linguisticNuanceLoraua": "dynamicContent",
+      "voiceInteractionLoraua": "createDate",
+      "globalOutreachLoraua": "storeFlag",
+      "vocalExpressionLoraua": "dynamicTitle",
+      "contentDiscoveryLoraua": "userName",
+      "interactiveLearningLoraua": "dynamicImgList",
+      "phrasebookLoraua": "friendFlag",
+      "syntaxMasteryLoraua": "fileTimes",
+      "communityBuildingLoraua": "storeNum",
+      "speechSynthesizerLoraua": "commentVoList",
+      "dailyVloggingLoraua": "userId",
+      "languageSyllabusLoraua": "videoImgUrl",
+      "commentVoList": {
+        "crossBorderLoraua": "beReplyContent",
+        "streamInteractionLoraua": "praiseNum",
+        "everydaySpeechLoraua": "bundleId",
+        "nativeFluencyLoraua": "beReplyUserId",
+        "naturalDialogueLoraua": "dynamicId",
+        "communicationBarrierLoraua": "commentId",
+        "interestGroupLoraua": "replyUserName",
+        "culturalAestheticLoraua": "replyUserImgUrl",
+        "worldCultureLoraua": "beReplyCommentId",
+        "dynamicMatchingLoraua": "replyUserId",
+        "voiceMessagingLoraua": "replyContent",
+        "audioProfileLoraua": "beReplyUserName"
+      },
+      "phoneticSymbolsLoraua": "dynamicType",
+      "audioChattingLoraua": "commentNum",
+      "peerFeedbackLoraua": "attentionFlag",
+      "realTimeChatLoraua": "dynamicId",
+      "verbalFluencyLoraua": "praiseNum",
+      "culturalBridgeLoraua": "bundleId",
+      "casualConversationLoraua": "dynamicClassify",
+      "activeSpeakingLoraua": "forwardNum"
+    },
+    "reqReplace": {
+      "languageJourneyLoraua": "dynamicType",
+      "listeningSkillLoraua": "selectType",
+      "userEngagementLoraua": "size",
+      "videoInteractionLoraua": "dynamicClassify",
+      "audioStreamingLoraua": "current",
+      "globalConnectivityLoraua": "bundleId",
+      "culturalInsightLoraua": "userId",
+      "microLearningLoraua": "selectVersion"
+    },
+    "systemPath": "/sj/dynamic/selectDynamicList"
+  },
+  {
+    "customPath": "/pulstqzihqkxlz/ltxurh",
+    "reqReplace": {
+      "vocalDictionLoraua": "version",
+      "speechClarityLoraua": "dynamicId",
+      "auditoryLearningLoraua": "dynamicUserId"
+    },
+    "systemPath": "/sj/dynamic/updateDynamicStore"
+  },
+  {
+    "customPath": "/pnsvxwkxbqz/jczvnzcv",
+    "reqReplace": {
+      "shortFormVideoLoraua": "beHandleUserName",
+      "contentStreamLoraua": "beHandleUserImg",
+      "videoClipsLoraua": "beHandleUserId",
+      "socialEngagementLoraua": "dynamicId",
+      "communityEngagementLoraua": "version",
+      "viralSnippetLoraua": "hanldeType"
+    },
+    "systemPath": "/sj/user/updateUserRelation"
+  },
+  {
+    "customPath": "/qrpuaglfcxtykriz/qrelrbpduugsg",
+    "resReplace": {
+      "messageUserVoList": {
+        "echoCancellationLoraua": "sendUserId",
+        "streamQualityLoraua": "sendUserName",
+        "userOnboardingLoraua": "receiveUserId",
+        "interactiveTutorialLoraua": "receiveUserName",
+        "noiseReductionLoraua": "title",
+        "avatarCustomizationLoraua": "messageId",
+        "audioFilterLoraua": "receiveUserImg",
+        "lowLatencyLoraua": "content",
+        "highDefinitionLoraua": "sendUserImgUrl",
+        "stableConnectionLoraua": "createDate",
+        "dataEncryptionLoraua": "readFlag"
+      },
+      "profileCustomizationLoraua": "messageUserVoList"
+    },
+    "reqReplace": {
+      "smartRecommendationLoraua": "receiveUserId",
+      "interestTagLoraua": "bundleId"
+    },
+    "systemPath": "/sj/message/selectMessageInfo"
+  },
+  {
+    "customPath": "/catsxz/epvwktc",
+    "resReplace": {
+      "customThemeLoraua": "userLocation",
+      "realTimeSyncLoraua": "userFrameImg",
+      "agileSprintLoraua": "labelList",
+      "reportingMechanismLoraua": "userEmail",
+      "moderationToolLoraua": "userId",
+      "activityIndicatorLoraua": "vipExpireTime",
+      "statusUpdateLoraua": "userGender",
+      "communityStandardLoraua": "userImgUrl",
+      "userFeedbackLoraua": "userBrief",
+      "automatedModerationLoraua": "userName",
+      "apiIntegrationLoraua": "userImgList",
+      "continuousIntegrationLoraua": "likeNum",
+      "localizationStrategyLoraua": "userHeight",
+      "pushNotificationLoraua": "userBirthday",
+      "websocketProtocolLoraua": "userImgList",
+      "crashAnalyticsLoraua": "userFans",
+      "bugTrackingLoraua": "userAttention",
+      "userDynamicVoList": {
+        "socialNetworkingLoraua": "userImgUrl",
+        "languageExchangeLoraua": "dynamicImgList",
+        "linguisticNuanceLoraua": "dynamicContent",
+        "voiceInteractionLoraua": "createDate",
+        "globalOutreachLoraua": "storeFlag",
+        "vocalExpressionLoraua": "dynamicTitle",
+        "contentDiscoveryLoraua": "userName",
+        "interactiveLearningLoraua": "dynamicImgList",
+        "phrasebookLoraua": "friendFlag",
+        "syntaxMasteryLoraua": "fileTimes",
+        "communityBuildingLoraua": "storeNum",
+        "speechSynthesizerLoraua": "commentVoList",
+        "dailyVloggingLoraua": "userId",
+        "languageSyllabusLoraua": "videoImgUrl",
+        "commentVoList": {
+          "crossBorderLoraua": "beReplyContent",
+          "streamInteractionLoraua": "praiseNum",
+          "everydaySpeechLoraua": "bundleId",
+          "nativeFluencyLoraua": "beReplyUserId",
+          "naturalDialogueLoraua": "dynamicId",
+          "communicationBarrierLoraua": "commentId",
+          "interestGroupLoraua": "replyUserName",
+          "culturalAestheticLoraua": "replyUserImgUrl",
+          "worldCultureLoraua": "beReplyCommentId",
+          "dynamicMatchingLoraua": "replyUserId",
+          "voiceMessagingLoraua": "replyContent",
+          "audioProfileLoraua": "beReplyUserName"
+        },
+        "phoneticSymbolsLoraua": "dynamicType",
+        "audioChattingLoraua": "commentNum",
+        "peerFeedbackLoraua": "attentionFlag",
+        "realTimeChatLoraua": "dynamicId",
+        "verbalFluencyLoraua": "praiseNum",
+        "culturalBridgeLoraua": "bundleId",
+        "casualConversationLoraua": "dynamicClassify",
+        "activeSpeakingLoraua": "forwardNum"
+      },
+      "stateManagementLoraua": "frameId",
+      "labelList": {
+        "productBacklogLoraua": "userLabelId",
+        "memoryOptimizationLoraua": "sort",
+        "crossPlatformDevLoraua": "labelName",
+        "taskManagementLoraua": "labelId",
+        "teamCollaborationLoraua": "userId",
+        "nativeUIFrameworkLoraua": "labelLog"
+      },
+      "timeZoneAlignmentLoraua": "attentionFlag",
+      "versionControlLoraua": "friendFlag",
+      "cloudHostingLoraua": "userDynamicVoList",
+      "regionalAdaptationLoraua": "userWeight",
+      "analyticalDashboardLoraua": "userFriends",
+      "performanceOptimizationLoraua": "historyNum"
+    },
+    "reqReplace": {
+      "privacyProtectionLoraua": "userId",
+      "secureMessagingLoraua": "version"
+    },
+    "systemPath": "/sj/user/selectUserInfo"
+  },
+  {
+    "customPath": "/gnxdnzmqesz/wkjqs",
+    "resReplace": {
+      "referralNetworkLoraua": "bundleId",
+      "responsiveDesignLoraua": "userId",
+      "codeObfuscationLoraua": "userImgUrl",
+      "organicTrafficLoraua": "userLocation",
+      "assetManagementLoraua": "userName",
+      "reviewComplianceLoraua": "userEmail",
+      "retentionStrategyLoraua": "vipExpireTime",
+      "gamifiedChallengeLoraua": "userType",
+      "badgeAchievementLoraua": "userHeight",
+      "userAcquisitionLoraua": "userStatus",
+      "viralGrowthLoraua": "equipmentNo",
+      "pointSystemLoraua": "token",
+      "streakTrackingLoraua": "userWeight",
+      "appVisibilityLoraua": "userBirthday",
+      "appStoreSubmissionLoraua": "userBrief",
+      "keywordOptimizationLoraua": "userGender"
+    },
+    "reqReplace": {},
+    "systemPath": "/sj/user/getUseInfo"
+  },
+  {
+    "customPath": "/hjqhcbvaz/ygoudvcons",
+    "reqReplace": {},
+    "systemPath": "/sj/user/selectUserBalance"
+  },
+  {
+    "customPath": "/axhcymbz/fiswoesjaid",
+    "resReplace": {
+      "referralNetworkLoraua": "bundleId",
+      "responsiveDesignLoraua": "userId",
+      "codeObfuscationLoraua": "userImgUrl",
+      "organicTrafficLoraua": "userLocation",
+      "assetManagementLoraua": "userName",
+      "reviewComplianceLoraua": "userEmail",
+      "retentionStrategyLoraua": "vipExpireTime",
+      "gamifiedChallengeLoraua": "userType",
+      "badgeAchievementLoraua": "userHeight",
+      "userAcquisitionLoraua": "userStatus",
+      "viralGrowthLoraua": "equipmentNo",
+      "pointSystemLoraua": "token",
+      "streakTrackingLoraua": "userWeight",
+      "appVisibilityLoraua": "userBirthday",
+      "appStoreSubmissionLoraua": "userBrief",
+      "keywordOptimizationLoraua": "userGender"
+    },
+    "reqReplace": {
+      "seasonalCampaignLoraua": "type",
+      "leaderboardRankingLoraua": "userEmail",
+      "limitedTimeEventLoraua": "bundleId",
+      "inAppPurchaseLoraua": "userBrief",
+      "subscriptionFlowLoraua": "userImgUrl",
+      "conversionOptimizationLoraua": "userName",
+      "dailyQuestLoraua": "password"
+    },
+    "systemPath": "/sj/user/emailLogin"
+  },
+  {
+    "customPath": "/tiqzqnz/utqfpgjwizin",
+    "resReplace": {
+      "brandEndorsementLoraua": "userId",
+      "gdprProtocolLoraua": "userList",
+      "featureFlaggingLoraua": "liveClassify",
+      "dataPrivacyLawLoraua": "bundleId",
+      "aAndBTestingLoraua": "livePassword",
+      "pushMarketingLoraua": "liveStatus",
+      "coppaComplianceLoraua": "createDate",
+      "automatedSupportLoraua": "liveLocation",
+      "complianceAuditLoraua": "videoTimes",
+      "socialSharingLoraua": "liveCoverImg",
+      "contactImportLoraua": "liveTime",
+      "notificationTriggersLoraua": "liveUserNum",
+      "legalFrameworkLoraua": "videoUrl",
+      "userList": {
+        "contentCurationLoraua": "liveId",
+        "feedbackLoopLoraua": "bundleId",
+        "licensingAgreementLoraua": "liveUserId",
+        "searchVisibilityLoraua": "userImgUrl",
+        "userSentimentLoraua": "userId",
+        "metadataOptimizationLoraua": "userName"
+      },
+      "inviteSystemLoraua": "liveTitle",
+      "universalLinkingLoraua": "liveIncome",
+      "partnerProgramLoraua": "liveId",
+      "ticketingSystemLoraua": "userName",
+      "userGuideLoraua": "userImgUrl"
+    },
+    "reqReplace": {
+      "adFreeBrowsingLoraua": "liveStatus",
+      "tippingMechanismLoraua": "size",
+      "contentMonetizationLoraua": "bundleId",
+      "affiliateMarketingLoraua": "liveClassify",
+      "virtualGiftingLoraua": "current",
+      "creatorIncentiveLoraua": "selectType"
+    },
+    "systemPath": "/sj/live/selectLivePage"
+  },
+  {
+    "customPath": "/xxyucglcuz/hrrgpm",
+    "resReplace": {
+      "cachingMechanismLoraua": "attentionFlag",
+      "securityPatchLoraua": "friendFlag",
+      "serverMaintenanceLoraua": "userBirthday",
+      "databaseQueryLoraua": "userLocation",
+      "backendServiceLoraua": "userImgUrl",
+      "automatedQALoraua": "userId",
+      "deploymentPipelineLoraua": "userName",
+      "microserviceArchitectureLoraua": "userBrief"
+    },
+    "reqReplace": {
+      "unitTestingLoraua": "selectType"
+    },
+    "systemPath": "/sj/user/selectUserRelation"
+  },
+  {
+    "customPath": "/oxhrzakaanovez/ierqt",
+    "resReplace": {
+      "privateRoomLoraua": "createDate",
+      "typographyScalingLoraua": "activityUserNum",
+      "coHostingFeatureLoraua": "activityCoverImg",
+      "stealthBrowsingLoraua": "activityId",
+      "incognitoFeatureLoraua": "activityTitle",
+      "interfaceLayoutLoraua": "activityDetailsTime",
+      "audioLatencyLoraua": "activityLableImg",
+      "hapticResponseLoraua": "activityLable",
+      "activityUserVoList": {
+        "casualHangoutLoraua": "attentionFlag",
+        "triviaChallengeLoraua": "userId",
+        "wordAssociationLoraua": "userName",
+        "icebreakerActivityLoraua": "userImgUrl"
+      },
+      "publicLoungeLoraua": "userId",
+      "communityHubLoraua": "addFlag",
+      "notificationFilterLoraua": "activityIntroduce",
+      "darkAppearanceLoraua": "activityLocation",
+      "screenBroadcastLoraua": "userImgUrl",
+      "interactivePollLoraua": "activityUserVoList",
+      "mediaPlaybackLoraua": "activityPhoneNum",
+      "virtualStageLoraua": "userName",
+      "userPreferencesLoraua": "activityDate"
+    },
+    "reqReplace": {
+      "accessControlLoraua": "beSelectUserId",
+      "encryptionProtocolLoraua": "bundleId",
+      "accountVerificationLoraua": "activityLable",
+      "transactionSecurityLoraua": "selectType",
+      "identityShieldLoraua": "version",
+      "fraudPreventionLoraua": "activityId"
+    },
+    "systemPath": "/sj/activity/selectActivityPage"
+  },
+  {
+    "customPath": "/nmneztixz/uxkqujyxllbb",
+    "reqReplace": {
+      "discussionForumLoraua": "activityId"
+    },
+    "systemPath": "/sj/activity/joinQuitActivity"
+  },
+  {
+    "customPath": "/wkpdvgwgcpghsz/jmohgivkoqhgo",
+    "reqReplace": {
+      "topicTaggingLoraua": "bundleId"
+    },
+    "systemPath": "/sj/activity/selectAcLabel"
+  },
+  {
+    "customPath": "/bfynixqxmetybz/ddqroldefa",
+    "reqReplace": {
+      "searchDiscoveryLoraua": "equipmentNo",
+      "virtualTravelLoraua": "type",
+      "globalRadarLoraua": "password"
+    },
+    "systemPath": "/sj/user/selectUpdateUser"
+  },
+  {
+    "customPath": "/totgggxyhfiqoasz/jdydxcar",
+    "resReplace": {
+      "gestureControlLoraua": "topicImg",
+      "dailyHighlightLoraua": "topicContent",
+      "facialRecognitionLoraua": "labelName",
+      "backgroundReplacementLoraua": "labelLog",
+      "languageSelectionLoraua": "praiseFlag",
+      "storyBroadcastingLoraua": "topicId",
+      "liveSubtitlingLoraua": "bundleId",
+      "automatedTranslationLoraua": "createDate"
+    },
+    "reqReplace": {
+      "cultureSharingLoraua": "bundleId"
+    },
+    "systemPath": "/sj/topic/selectTopicPage"
+  },
+  {
+    "customPath": "/rauybguelkcykz/cyeuakvn",
+    "resReplace": {
+      "conversationalPacingLoraua": "userLabelInfoVos",
+      "accentMimicLoraua": "userImgUrl",
+      "userLabelInfoVos": {
+        "productBacklogLoraua": "userLabelId",
+        "memoryOptimizationLoraua": "sort",
+        "crossPlatformDevLoraua": "labelName",
+        "taskManagementLoraua": "labelId",
+        "teamCollaborationLoraua": "userId",
+        "nativeUIFrameworkLoraua": "labelLog"
+      },
+      "tandemPartnerLoraua": "userName",
+      "studyBuddyLoraua": "userId"
+    },
+    "reqReplace": {
+      "levelAssessmentLoraua": "bundleId"
+    },
+    "systemPath": "/sj/user/selectMatchUser"
+  },
+  {
+    "customPath": "/cszftqiz/achapbeayfjp",
+    "reqReplace": {
+      "lexiconExpansionLoraua": "messageId"
+    },
+    "systemPath": "/sj/message/updateMsgRead"
+  },
+  {
+    "customPath": "/tssilsoeujsnsfz/hysafsxjnhwa",
+    "resReplace": {
+      "echoCancellationLoraua": "sendUserId",
+      "streamQualityLoraua": "sendUserName",
+      "userOnboardingLoraua": "receiveUserId",
+      "interactiveTutorialLoraua": "receiveUserName",
+      "noiseReductionLoraua": "title",
+      "avatarCustomizationLoraua": "messageId",
+      "audioFilterLoraua": "receiveUserImg",
+      "lowLatencyLoraua": "content",
+      "highDefinitionLoraua": "sendUserImgUrl",
+      "stableConnectionLoraua": "createDate",
+      "dataEncryptionLoraua": "readFlag"
+    },
+    "reqReplace": {},
+    "systemPath": "/sj/message/selectNotifyMsg"
+  },
+  {
+    "customPath": "/cpbaijsqdz/digkbxsmnludsy",
+    "reqReplace": {
+      "globalCitizenshipLoraua": "userSecondImgUrl",
+      "empathyDrivenLoraua": "matchStatus",
+      "culturalEtiquetteLoraua": "userSecondName",
+      "slangUsageLoraua": "userSecondId"
+    },
+    "systemPath": "/sj/matchrecord/addMatchRecord"
+  },
+  {
+    "customPath": "/xidtdz/kbngfhm",
+    "resReplace": {
+      "tongueTwisterLoraua": "userSecondId",
+      "nonverbalCuesLoraua": "userId",
+      "expressiveSpeechLoraua": "userName",
+      "phonologicalAwarenessLoraua": "userSecondImgUrl",
+      "vocalWarmupLoraua": "userImgUrl",
+      "articulationDrillLoraua": "userSecondName"
+    },
+    "reqReplace": {
+      "activeListeningLoraua": "matchStatus"
+    },
+    "systemPath": "/sj/matchrecord/selectMatchRecord"
+  },
+  {
+    "customPath": "/vrhvafz/wcmatrctrtpjuz",
+    "resReplace": {
+      "sociolinguisticStudyLoraua": "dictRemkar",
+      "semanticNuanceLoraua": "dictType",
+      "pragmaticUsageLoraua": "dictSort",
+      "morphologyStudyLoraua": "dictName",
+      "codeSwitchingLoraua": "imgList",
+      "dialectMapLoraua": "imgList"
+    },
+    "reqReplace": {
+      "speechIntonationLoraua": "version",
+      "prosodyAnalysisLoraua": "bundleId"
+    },
+    "systemPath": "/sj/dict/selectDictListForFive"
+  },
+  {
+    "customPath": "/nmyschuiz/nnngrrdgnjdp",
+    "resReplace": {
+      "humorExchangeLoraua": "matchUserId",
+      "laughterConnectionLoraua": "userName",
+      "acousticTextureLoraua": "userAge",
+      "lyricMatchingLoraua": "attentionFlag",
+      "userImgList": {
+        "audioEffectsLoraua": "userImagesId",
+        "soundboardTriggerLoraua": "userId",
+        "podcastEpisodeLoraua": "imgUrl",
+        "listenerCallInLoraua": "bundleId"
+      },
+      "spatialAudioLoraua": "showLabelUrl",
+      "labelEntityList": {
+        "vocalTalentLoraua": "bundleId",
+        "interviewFormatLoraua": "labelLog",
+        "openMicNightLoraua": "sort",
+        "audienceInteractionLoraua": "userId",
+        "panelDiscussionLoraua": "labelName",
+        "liveBroadcastingLoraua": "userLabelId"
+      },
+      "jamSessionLoraua": "userImgList",
+      "vocalPitchLoraua": "userImgUrl",
+      "voiceModulatorLoraua": "userLocation",
+      "highFidelityVoiceLoraua": "labelEntityList",
+      "backgroundSoundscapeLoraua": "userFans"
+    },
+    "reqReplace": {
+      "narrativeDriveLoraua": "endAge",
+      "folkloreTellingLoraua": "bundleId",
+      "vocalPersonaLoraua": "startAge"
+    },
+    "systemPath": "/sj/matchuser/selectMatchUserList"
+  },
+  {
+    "customPath": "/ranvkitiaotiqysz/hrligefkhpnly",
+    "reqReplace": {
+      "quizNightLoraua": "bundleId"
+    },
+    "systemPath": "/sj/user/selectUseIosBuy"
+  },
+  {
+    "customPath": "/txfwsz/kegyr",
+    "resReplace": {
+      "referralNetworkLoraua": "bundleId",
+      "responsiveDesignLoraua": "userId",
+      "codeObfuscationLoraua": "userImgUrl",
+      "organicTrafficLoraua": "userLocation",
+      "assetManagementLoraua": "userName",
+      "reviewComplianceLoraua": "userEmail",
+      "retentionStrategyLoraua": "vipExpireTime",
+      "gamifiedChallengeLoraua": "userType",
+      "badgeAchievementLoraua": "userHeight",
+      "userAcquisitionLoraua": "userStatus",
+      "viralGrowthLoraua": "equipmentNo",
+      "pointSystemLoraua": "token",
+      "streakTrackingLoraua": "userWeight",
+      "appVisibilityLoraua": "userBirthday",
+      "appStoreSubmissionLoraua": "userBrief",
+      "keywordOptimizationLoraua": "userGender"
+    },
+    "reqReplace": {
+      "charadesGameLoraua": "identityToken",
+      "virtualGatheringLoraua": "equipmentNo",
+      "greenRoomAccessLoraua": "bundleId"
+    },
+    "systemPath": "/vse/user/appleSsoLogin"
+  }
+]

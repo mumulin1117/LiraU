@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A0000010000000000000001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000101 /* AppDelegate.swift */; };
+		2A0000010000000000000002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000102 /* SceneDelegate.swift */; };
+		2A0000010000000000000003 /* LirauTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000103 /* LirauTheme.swift */; };
+		2A0000010000000000000004 /* LirauAuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000104 /* LirauAuthStore.swift */; };
+		2A0000010000000000000005 /* LirauAuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000105 /* LirauAuthModels.swift */; };
+		2A0000010000000000000006 /* LirauWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000106 /* LirauWelcomeViewController.swift */; };
+		2A0000010000000000000007 /* LirauLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000107 /* LirauLoginViewController.swift */; };
+		2A0000010000000000000008 /* LirauRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000108 /* LirauRegisterViewController.swift */; };
+		2A0000010000000000000009 /* LirauProfileSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000109 /* LirauProfileSetupViewController.swift */; };
+		2A0000010000000000000010 /* LirauTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000110 /* LirauTermsViewController.swift */; };
+		2A0000010000000000000011 /* LirauMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000111 /* LirauMainTabBarController.swift */; };
+		2A0000010000000000000013 /* LirauCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000113 /* LirauCommunityViewController.swift */; };
+		2A0000010000000000000016 /* LirauReusableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000116 /* LirauReusableViews.swift */; };
+		2A0000010000000000000017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000117 /* Assets.xcassets */; };
+		2A0000010000000000000018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000118 /* LaunchScreen.storyboard */; };
+		2A0000010000000000000019 /* LirauLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000119 /* LirauLaunchViewController.swift */; };
+		2B1000000000000000000001 /* LirauHomeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000102 /* LirauHomeModels.m */; };
+		2B1000000000000000000002 /* LirauHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000104 /* LirauHomeManager.m */; };
+		2B1000000000000000000003 /* LirauHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000106 /* LirauHomeHeaderView.m */; };
+		2B1000000000000000000004 /* LirauHomeSectionTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000108 /* LirauHomeSectionTitleView.m */; };
+		2B1000000000000000000005 /* LirauHomeUserChipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000110 /* LirauHomeUserChipView.m */; };
+		2B1000000000000000000006 /* LirauHomeTalkShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000112 /* LirauHomeTalkShowCell.m */; };
+		2B1000000000000000000007 /* LirauHomeWordBitsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000114 /* LirauHomeWordBitsCell.m */; };
+		2B1000000000000000000008 /* LirauHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000116 /* LirauHomeViewController.m */; };
+		2C1000000000000000000001 /* LirauVideoModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000102 /* LirauVideoModels.m */; };
+		2C1000000000000000000002 /* LirauVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000104 /* LirauVideoManager.m */; };
+		2C1000000000000000000003 /* LirauVideoTopTabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000106 /* LirauVideoTopTabsView.m */; };
+		2C1000000000000000000004 /* LirauVideoUserBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000108 /* LirauVideoUserBadgeView.m */; };
+		2C1000000000000000000005 /* LirauVideoActionBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000110 /* LirauVideoActionBarView.m */; };
+		2C1000000000000000000006 /* LirauVideoStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000112 /* LirauVideoStateView.m */; };
+		2C1000000000000000000007 /* LirauVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000114 /* LirauVideoCell.m */; };
+		2C1000000000000000000008 /* LirauVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1000000000000000000116 /* LirauVideoViewController.m */; };
+		2D1000000000000000000001 /* LirauProfileModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000102 /* LirauProfileModels.m */; };
+		2D1000000000000000000002 /* LirauProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000104 /* LirauProfileManager.m */; };
+		2D1000000000000000000003 /* LirauProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000106 /* LirauProfileHeaderView.m */; };
+		2D1000000000000000000004 /* LirauProfileWalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000108 /* LirauProfileWalletView.m */; };
+		2D1000000000000000000005 /* LirauProfileEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000110 /* LirauProfileEmptyView.m */; };
+		2D1000000000000000000006 /* LirauProfilePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000112 /* LirauProfilePostCell.m */; };
+		2D1000000000000000000007 /* LirauProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000114 /* LirauProfileViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A0000010000000000000100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A0000010000000000000101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A0000010000000000000102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2A0000010000000000000103 /* LirauTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauTheme.swift; sourceTree = "<group>"; };
+		2A0000010000000000000104 /* LirauAuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauAuthStore.swift; sourceTree = "<group>"; };
+		2A0000010000000000000105 /* LirauAuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauAuthModels.swift; sourceTree = "<group>"; };
+		2A0000010000000000000106 /* LirauWelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauWelcomeViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000107 /* LirauLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauLoginViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000108 /* LirauRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauRegisterViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000109 /* LirauProfileSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauProfileSetupViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000110 /* LirauTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauTermsViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000111 /* LirauMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauMainTabBarController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000113 /* LirauCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000116 /* LirauReusableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauReusableViews.swift; sourceTree = "<group>"; };
+		2A0000010000000000000117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A0000010000000000000118 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A0000010000000000000119 /* LirauLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauLaunchViewController.swift; sourceTree = "<group>"; };
+		2A0000010000000000000200 /* LirauLnBuor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LirauLnBuor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B1000000000000000000100 /* LirauLnBuor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LirauLnBuor-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B1000000000000000000101 /* LirauHomeModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeModels.h; sourceTree = "<group>"; };
+		2B1000000000000000000102 /* LirauHomeModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeModels.m; sourceTree = "<group>"; };
+		2B1000000000000000000103 /* LirauHomeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeManager.h; sourceTree = "<group>"; };
+		2B1000000000000000000104 /* LirauHomeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeManager.m; sourceTree = "<group>"; };
+		2B1000000000000000000105 /* LirauHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeHeaderView.h; sourceTree = "<group>"; };
+		2B1000000000000000000106 /* LirauHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeHeaderView.m; sourceTree = "<group>"; };
+		2B1000000000000000000107 /* LirauHomeSectionTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeSectionTitleView.h; sourceTree = "<group>"; };
+		2B1000000000000000000108 /* LirauHomeSectionTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeSectionTitleView.m; sourceTree = "<group>"; };
+		2B1000000000000000000109 /* LirauHomeUserChipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeUserChipView.h; sourceTree = "<group>"; };
+		2B1000000000000000000110 /* LirauHomeUserChipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeUserChipView.m; sourceTree = "<group>"; };
+		2B1000000000000000000111 /* LirauHomeTalkShowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeTalkShowCell.h; sourceTree = "<group>"; };
+		2B1000000000000000000112 /* LirauHomeTalkShowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeTalkShowCell.m; sourceTree = "<group>"; };
+		2B1000000000000000000113 /* LirauHomeWordBitsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeWordBitsCell.h; sourceTree = "<group>"; };
+		2B1000000000000000000114 /* LirauHomeWordBitsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeWordBitsCell.m; sourceTree = "<group>"; };
+		2B1000000000000000000115 /* LirauHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeViewController.h; sourceTree = "<group>"; };
+		2B1000000000000000000116 /* LirauHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauHomeViewController.m; sourceTree = "<group>"; };
+		2C1000000000000000000101 /* LirauVideoModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoModels.h; sourceTree = "<group>"; };
+		2C1000000000000000000102 /* LirauVideoModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoModels.m; sourceTree = "<group>"; };
+		2C1000000000000000000103 /* LirauVideoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoManager.h; sourceTree = "<group>"; };
+		2C1000000000000000000104 /* LirauVideoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoManager.m; sourceTree = "<group>"; };
+		2C1000000000000000000105 /* LirauVideoTopTabsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoTopTabsView.h; sourceTree = "<group>"; };
+		2C1000000000000000000106 /* LirauVideoTopTabsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoTopTabsView.m; sourceTree = "<group>"; };
+		2C1000000000000000000107 /* LirauVideoUserBadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoUserBadgeView.h; sourceTree = "<group>"; };
+		2C1000000000000000000108 /* LirauVideoUserBadgeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoUserBadgeView.m; sourceTree = "<group>"; };
+		2C1000000000000000000109 /* LirauVideoActionBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoActionBarView.h; sourceTree = "<group>"; };
+		2C1000000000000000000110 /* LirauVideoActionBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoActionBarView.m; sourceTree = "<group>"; };
+		2C1000000000000000000111 /* LirauVideoStateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoStateView.h; sourceTree = "<group>"; };
+		2C1000000000000000000112 /* LirauVideoStateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoStateView.m; sourceTree = "<group>"; };
+		2C1000000000000000000113 /* LirauVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoCell.h; sourceTree = "<group>"; };
+		2C1000000000000000000114 /* LirauVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoCell.m; sourceTree = "<group>"; };
+		2C1000000000000000000115 /* LirauVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauVideoViewController.h; sourceTree = "<group>"; };
+		2C1000000000000000000116 /* LirauVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauVideoViewController.m; sourceTree = "<group>"; };
+		2D1000000000000000000101 /* LirauProfileModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileModels.h; sourceTree = "<group>"; };
+		2D1000000000000000000102 /* LirauProfileModels.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileModels.m; sourceTree = "<group>"; };
+		2D1000000000000000000103 /* LirauProfileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileManager.h; sourceTree = "<group>"; };
+		2D1000000000000000000104 /* LirauProfileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileManager.m; sourceTree = "<group>"; };
+		2D1000000000000000000105 /* LirauProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileHeaderView.h; sourceTree = "<group>"; };
+		2D1000000000000000000106 /* LirauProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileHeaderView.m; sourceTree = "<group>"; };
+		2D1000000000000000000107 /* LirauProfileWalletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileWalletView.h; sourceTree = "<group>"; };
+		2D1000000000000000000108 /* LirauProfileWalletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileWalletView.m; sourceTree = "<group>"; };
+		2D1000000000000000000109 /* LirauProfileEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileEmptyView.h; sourceTree = "<group>"; };
+		2D1000000000000000000110 /* LirauProfileEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileEmptyView.m; sourceTree = "<group>"; };
+		2D1000000000000000000111 /* LirauProfilePostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfilePostCell.h; sourceTree = "<group>"; };
+		2D1000000000000000000112 /* LirauProfilePostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfilePostCell.m; sourceTree = "<group>"; };
+		2D1000000000000000000113 /* LirauProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileViewController.h; sourceTree = "<group>"; };
+		2D1000000000000000000114 /* LirauProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A0000010000000000000300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A0000010000000000000400 = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000401 /* LirauLnBuor */,
+				2A0000010000000000000402 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000401 /* LirauLnBuor */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000100 /* Info.plist */,
+				2A0000010000000000000403 /* Sources */,
+				2A0000010000000000000409 /* Resources */,
+			);
+			path = LirauLnBuor;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000402 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000200 /* LirauLnBuor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000403 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2B1000000000000000000100 /* LirauLnBuor-Bridging-Header.h */,
+				2A0000010000000000000404 /* App */,
+				2A0000010000000000000405 /* Auth */,
+				2A0000010000000000000406 /* Main */,
+				2A0000010000000000000407 /* Models */,
+				2A0000010000000000000408 /* Shared */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000404 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000101 /* AppDelegate.swift */,
+				2A0000010000000000000102 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000405 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000104 /* LirauAuthStore.swift */,
+				2A0000010000000000000119 /* LirauLaunchViewController.swift */,
+				2A0000010000000000000106 /* LirauWelcomeViewController.swift */,
+				2A0000010000000000000107 /* LirauLoginViewController.swift */,
+				2A0000010000000000000108 /* LirauRegisterViewController.swift */,
+				2A0000010000000000000109 /* LirauProfileSetupViewController.swift */,
+				2A0000010000000000000110 /* LirauTermsViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000406 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000111 /* LirauMainTabBarController.swift */,
+				2B1000000000000000000200 /* Home */,
+				2A0000010000000000000113 /* LirauCommunityViewController.swift */,
+				2C1000000000000000000200 /* Video */,
+				2D1000000000000000000200 /* Profile */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000407 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000105 /* LirauAuthModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000408 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000103 /* LirauTheme.swift */,
+				2A0000010000000000000116 /* LirauReusableViews.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2A0000010000000000000409 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A0000010000000000000117 /* Assets.xcassets */,
+				2A0000010000000000000118 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2B1000000000000000000200 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2B1000000000000000000115 /* LirauHomeViewController.h */,
+				2B1000000000000000000116 /* LirauHomeViewController.m */,
+				2B1000000000000000000201 /* Models */,
+				2B1000000000000000000202 /* Managers */,
+				2B1000000000000000000203 /* Views */,
+				2B1000000000000000000204 /* Cells */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2B1000000000000000000201 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B1000000000000000000101 /* LirauHomeModels.h */,
+				2B1000000000000000000102 /* LirauHomeModels.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B1000000000000000000202 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2B1000000000000000000103 /* LirauHomeManager.h */,
+				2B1000000000000000000104 /* LirauHomeManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2B1000000000000000000203 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B1000000000000000000105 /* LirauHomeHeaderView.h */,
+				2B1000000000000000000106 /* LirauHomeHeaderView.m */,
+				2B1000000000000000000107 /* LirauHomeSectionTitleView.h */,
+				2B1000000000000000000108 /* LirauHomeSectionTitleView.m */,
+				2B1000000000000000000109 /* LirauHomeUserChipView.h */,
+				2B1000000000000000000110 /* LirauHomeUserChipView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B1000000000000000000204 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2B1000000000000000000111 /* LirauHomeTalkShowCell.h */,
+				2B1000000000000000000112 /* LirauHomeTalkShowCell.m */,
+				2B1000000000000000000113 /* LirauHomeWordBitsCell.h */,
+				2B1000000000000000000114 /* LirauHomeWordBitsCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2C1000000000000000000200 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				2C1000000000000000000115 /* LirauVideoViewController.h */,
+				2C1000000000000000000116 /* LirauVideoViewController.m */,
+				2C1000000000000000000201 /* Models */,
+				2C1000000000000000000202 /* Managers */,
+				2C1000000000000000000203 /* Views */,
+				2C1000000000000000000204 /* Cells */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		2C1000000000000000000201 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C1000000000000000000101 /* LirauVideoModels.h */,
+				2C1000000000000000000102 /* LirauVideoModels.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C1000000000000000000202 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2C1000000000000000000103 /* LirauVideoManager.h */,
+				2C1000000000000000000104 /* LirauVideoManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2C1000000000000000000203 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C1000000000000000000105 /* LirauVideoTopTabsView.h */,
+				2C1000000000000000000106 /* LirauVideoTopTabsView.m */,
+				2C1000000000000000000107 /* LirauVideoUserBadgeView.h */,
+				2C1000000000000000000108 /* LirauVideoUserBadgeView.m */,
+				2C1000000000000000000109 /* LirauVideoActionBarView.h */,
+				2C1000000000000000000110 /* LirauVideoActionBarView.m */,
+				2C1000000000000000000111 /* LirauVideoStateView.h */,
+				2C1000000000000000000112 /* LirauVideoStateView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C1000000000000000000204 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C1000000000000000000113 /* LirauVideoCell.h */,
+				2C1000000000000000000114 /* LirauVideoCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2D1000000000000000000200 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2D1000000000000000000113 /* LirauProfileViewController.h */,
+				2D1000000000000000000114 /* LirauProfileViewController.m */,
+				2D1000000000000000000201 /* Models */,
+				2D1000000000000000000202 /* Managers */,
+				2D1000000000000000000203 /* Views */,
+				2D1000000000000000000204 /* Cells */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2D1000000000000000000201 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D1000000000000000000101 /* LirauProfileModels.h */,
+				2D1000000000000000000102 /* LirauProfileModels.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2D1000000000000000000202 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2D1000000000000000000103 /* LirauProfileManager.h */,
+				2D1000000000000000000104 /* LirauProfileManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2D1000000000000000000203 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D1000000000000000000105 /* LirauProfileHeaderView.h */,
+				2D1000000000000000000106 /* LirauProfileHeaderView.m */,
+				2D1000000000000000000107 /* LirauProfileWalletView.h */,
+				2D1000000000000000000108 /* LirauProfileWalletView.m */,
+				2D1000000000000000000109 /* LirauProfileEmptyView.h */,
+				2D1000000000000000000110 /* LirauProfileEmptyView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2D1000000000000000000204 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2D1000000000000000000111 /* LirauProfilePostCell.h */,
+				2D1000000000000000000112 /* LirauProfilePostCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A0000010000000000000500 /* LirauLnBuor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A0000010000000000000902 /* Build configuration list for PBXNativeTarget "LirauLnBuor" */;
+			buildPhases = (
+				2A0000010000000000000600 /* Sources */,
+				2A0000010000000000000300 /* Frameworks */,
+				2A0000010000000000000700 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LirauLnBuor;
+			productName = LirauLnBuor;
+			productReference = 2A0000010000000000000200 /* LirauLnBuor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A0000010000000000000800 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					2A0000010000000000000500 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 2A0000010000000000000901 /* Build configuration list for PBXProject "LirauLnBuor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A0000010000000000000400;
+			productRefGroup = 2A0000010000000000000402 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A0000010000000000000500 /* LirauLnBuor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A0000010000000000000700 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000010000000000000017 /* Assets.xcassets in Resources */,
+				2A0000010000000000000018 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A0000010000000000000600 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A0000010000000000000001 /* AppDelegate.swift in Sources */,
+				2A0000010000000000000002 /* SceneDelegate.swift in Sources */,
+				2A0000010000000000000003 /* LirauTheme.swift in Sources */,
+				2A0000010000000000000004 /* LirauAuthStore.swift in Sources */,
+				2A0000010000000000000005 /* LirauAuthModels.swift in Sources */,
+				2A0000010000000000000019 /* LirauLaunchViewController.swift in Sources */,
+				2A0000010000000000000006 /* LirauWelcomeViewController.swift in Sources */,
+				2A0000010000000000000007 /* LirauLoginViewController.swift in Sources */,
+				2A0000010000000000000008 /* LirauRegisterViewController.swift in Sources */,
+				2A0000010000000000000009 /* LirauProfileSetupViewController.swift in Sources */,
+				2A0000010000000000000010 /* LirauTermsViewController.swift in Sources */,
+				2A0000010000000000000011 /* LirauMainTabBarController.swift in Sources */,
+				2B1000000000000000000008 /* LirauHomeViewController.m in Sources */,
+				2B1000000000000000000001 /* LirauHomeModels.m in Sources */,
+				2B1000000000000000000002 /* LirauHomeManager.m in Sources */,
+				2B1000000000000000000003 /* LirauHomeHeaderView.m in Sources */,
+				2B1000000000000000000004 /* LirauHomeSectionTitleView.m in Sources */,
+				2B1000000000000000000005 /* LirauHomeUserChipView.m in Sources */,
+				2B1000000000000000000006 /* LirauHomeTalkShowCell.m in Sources */,
+				2B1000000000000000000007 /* LirauHomeWordBitsCell.m in Sources */,
+				2C1000000000000000000008 /* LirauVideoViewController.m in Sources */,
+				2C1000000000000000000001 /* LirauVideoModels.m in Sources */,
+				2C1000000000000000000002 /* LirauVideoManager.m in Sources */,
+				2C1000000000000000000003 /* LirauVideoTopTabsView.m in Sources */,
+				2C1000000000000000000004 /* LirauVideoUserBadgeView.m in Sources */,
+				2C1000000000000000000005 /* LirauVideoActionBarView.m in Sources */,
+				2C1000000000000000000006 /* LirauVideoStateView.m in Sources */,
+				2C1000000000000000000007 /* LirauVideoCell.m in Sources */,
+				2A0000010000000000000013 /* LirauCommunityViewController.swift in Sources */,
+				2D1000000000000000000007 /* LirauProfileViewController.m in Sources */,
+				2D1000000000000000000001 /* LirauProfileModels.m in Sources */,
+				2D1000000000000000000002 /* LirauProfileManager.m in Sources */,
+				2D1000000000000000000003 /* LirauProfileHeaderView.m in Sources */,
+				2D1000000000000000000004 /* LirauProfileWalletView.m in Sources */,
+				2D1000000000000000000005 /* LirauProfileEmptyView.m in Sources */,
+				2D1000000000000000000006 /* LirauProfilePostCell.m in Sources */,
+				2A0000010000000000000016 /* LirauReusableViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2A0000010000000000000903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A0000010000000000000904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A0000010000000000000905 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/LirauLnBuor/Sources/Main/Home/**",
+					"$(SRCROOT)/LirauLnBuor/Sources/Main/Video/**",
+					"$(SRCROOT)/LirauLnBuor/Sources/Main/Profile/**",
+				);
+				INFOPLIST_FILE = LirauLnBuor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lirau.lnbuor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "LirauLnBuor/Sources/LirauLnBuor-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2A0000010000000000000906 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/LirauLnBuor/Sources/Main/Home/**",
+					"$(SRCROOT)/LirauLnBuor/Sources/Main/Video/**",
+					"$(SRCROOT)/LirauLnBuor/Sources/Main/Profile/**",
+				);
+				INFOPLIST_FILE = LirauLnBuor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lirau.lnbuor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "LirauLnBuor/Sources/LirauLnBuor-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A0000010000000000000901 /* Build configuration list for PBXProject "LirauLnBuor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000010000000000000903 /* Debug */,
+				2A0000010000000000000904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A0000010000000000000902 /* Build configuration list for PBXNativeTarget "LirauLnBuor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A0000010000000000000905 /* Debug */,
+				2A0000010000000000000906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A0000010000000000000800 /* Project object */;
+}
