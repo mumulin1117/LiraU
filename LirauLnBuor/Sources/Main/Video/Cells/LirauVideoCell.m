@@ -7,7 +7,7 @@
 @property (nonatomic, strong) UIImageView *coverImageView;
 @property (nonatomic, strong) LirauVideoUserBadgeView *userBadgeView;
 @property (nonatomic, strong) UIImageView *playImageView;
-@property (nonatomic, strong) UIButton *alertButton;
+@property (nonatomic, strong) UIButton *reportButton;
 @property (nonatomic, strong) UILabel *descriptionLabel;
 @property (nonatomic, strong) LirauVideoActionBarView *actionBarView;
 @property (nonatomic, strong) CAGradientLayer *placeholderLayer;
@@ -79,11 +79,12 @@
     [self.userBadgeView addTarget:self action:@selector(didTapUser) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.userBadgeView];
 
-    self.alertButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.alertButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.alertButton setImage:[UIImage imageNamed:@"lira_video_alert_button"] forState:UIControlStateNormal];
-    [self.alertButton addTarget:self action:@selector(didTapAlert) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView addSubview:self.alertButton];
+    self.reportButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.reportButton.translatesAutoresizingMaskIntoConstraints = NO;
+    self.reportButton.backgroundColor = nil;
+    [self.reportButton setImage:[UIImage imageNamed:@"lira_video_alert_button"] forState:UIControlStateNormal];
+    [self.reportButton addTarget:self action:@selector(didTapReport) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:self.reportButton];
 
     self.playImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lira_video_play_button"]];
     self.playImageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -104,8 +105,6 @@
     __weak typeof(self) weakSelf = self;
     self.actionBarView.likeHandler = ^{ if (weakSelf.likeHandler) { weakSelf.likeHandler(); } };
     self.actionBarView.commentHandler = ^{ if (weakSelf.commentHandler) { weakSelf.commentHandler(); } };
-    self.actionBarView.giftHandler = ^{ if (weakSelf.giftHandler) { weakSelf.giftHandler(); } };
-    self.actionBarView.shareHandler = ^{ if (weakSelf.shareHandler) { weakSelf.shareHandler(); } };
     [self.contentView addSubview:self.actionBarView];
 
     [NSLayoutConstraint activateConstraints:@[
@@ -123,10 +122,10 @@
         [self.userBadgeView.widthAnchor constraintGreaterThanOrEqualToConstant:130],
         [self.userBadgeView.widthAnchor constraintLessThanOrEqualToConstant:210],
 
-        [self.alertButton.centerYAnchor constraintEqualToAnchor:self.userBadgeView.centerYAnchor],
-        [self.alertButton.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-16],
-        [self.alertButton.widthAnchor constraintEqualToConstant:44],
-        [self.alertButton.heightAnchor constraintEqualToConstant:44],
+        [self.reportButton.centerYAnchor constraintEqualToAnchor:self.userBadgeView.centerYAnchor],
+        [self.reportButton.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-16],
+        [self.reportButton.widthAnchor constraintEqualToConstant:30],
+        [self.reportButton.heightAnchor constraintEqualToConstant:30],
 
         [self.playImageView.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor],
         [self.playImageView.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor],
@@ -186,8 +185,12 @@
     }
 }
 
-- (void)didTapAlert {
-    NSLog(@"LiraU Video TODO: More/report entry tapped");
+- (void)didTapReport {
+    if (self.reportHandler) {
+        self.reportHandler();
+        return;
+    }
+    NSLog(@"LiraU Video TODO: Report entry tapped");
     // TODO: Open report or more panel after the moderation module is implemented.
 }
 

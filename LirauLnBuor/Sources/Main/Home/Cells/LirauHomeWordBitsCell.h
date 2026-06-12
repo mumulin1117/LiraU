@@ -5,6 +5,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LirauHomeWordBitsCell : UICollectionViewCell
 
+@property (nonatomic, copy, nullable) void (^reportHandler)(void);
+
 + (NSString *)reuseIdentifier;
 - (void)configureWithItem:(LirauHomeDynamicItem *)item;
 

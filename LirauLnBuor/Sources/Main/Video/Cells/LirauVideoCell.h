@@ -7,8 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, nullable) void (^likeHandler)(void);
 @property (nonatomic, copy, nullable) void (^commentHandler)(void);
-@property (nonatomic, copy, nullable) void (^giftHandler)(void);
-@property (nonatomic, copy, nullable) void (^shareHandler)(void);
+@property (nonatomic, copy, nullable) void (^reportHandler)(void);
 @property (nonatomic, copy, nullable) void (^userHandler)(void);
 @property (nonatomic, copy, nullable) void (^videoHandler)(void);
 

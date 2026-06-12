@@ -1,6 +1,9 @@
 #import "LirauProfileModels.h"
 
 static NSString *LirauProfileStringValue(id value) {
+    if (!value || value == NSNull.null) {
+        return @"";
+    }
     if ([value isKindOfClass:NSString.class]) {
         return (NSString *)value;
     }
@@ -26,7 +29,14 @@ static NSInteger LirauProfileIntegerValue(id value) {
     user.displayName = LirauProfileStringValue(dictionary[@"displayName"]).length > 0 ? LirauProfileStringValue(dictionary[@"displayName"]) : @"LiraU Learner";
     user.profileIntroLoraua = LirauProfileStringValue(dictionary[@"profileIntroLoraua"]);
     user.languagePairingLoraua = LirauProfileStringValue(dictionary[@"languagePairingLoraua"]);
-    user.walletBalance = @"5.000";
+    NSString *localBalance = LirauProfileStringValue(dictionary[@"linguisticAdaptationLoraua"]);
+    if (localBalance.length == 0) {
+        localBalance = LirauProfileStringValue(dictionary[@"userBalance"]);
+    }
+    if (localBalance.length == 0) {
+        localBalance = LirauProfileStringValue(dictionary[@"walletBalance"]);
+    }
+    user.walletBalance = localBalance.length > 0 ? localBalance : @"0";
     user.followingCount = 245;
     user.postCount = 100;
     user.followersCount = 336;
@@ -84,17 +94,25 @@ static NSInteger LirauProfileIntegerValue(id value) {
         self.profileIntroLoraua = brief;
     }
 
-    NSInteger remoteFollowers = LirauProfileIntegerValue(dictionary[@"crashAnalyticsLoraua"]);
-    if (remoteFollowers > 0) {
-        self.followersCount = remoteFollowers;
+    NSString *remoteBalance = LirauProfileStringValue(dictionary[@"linguisticAdaptationLoraua"]);
+    if (remoteBalance.length == 0) {
+        remoteBalance = LirauProfileStringValue(dictionary[@"userBalance"]);
     }
-    NSInteger remoteFollowing = LirauProfileIntegerValue(dictionary[@"bugTrackingLoraua"]);
-    if (remoteFollowing > 0) {
-        self.followingCount = remoteFollowing;
+    if (remoteBalance.length == 0) {
+        remoteBalance = LirauProfileStringValue(dictionary[@"walletBalance"]);
     }
-    NSInteger remotePosts = LirauProfileIntegerValue(dictionary[@"performanceOptimizationLoraua"]);
-    if (remotePosts > 0) {
-        self.postCount = remotePosts;
+    if (remoteBalance.length > 0) {
+        self.walletBalance = remoteBalance;
+    }
+
+    if (dictionary[@"crashAnalyticsLoraua"]) {
+        self.followersCount = MAX(0, LirauProfileIntegerValue(dictionary[@"crashAnalyticsLoraua"]));
+    }
+    if (dictionary[@"bugTrackingLoraua"]) {
+        self.followingCount = MAX(0, LirauProfileIntegerValue(dictionary[@"bugTrackingLoraua"]));
+    }
+    if (dictionary[@"performanceOptimizationLoraua"]) {
+        self.postCount = MAX(0, LirauProfileIntegerValue(dictionary[@"performanceOptimizationLoraua"]));
     }
 }
 

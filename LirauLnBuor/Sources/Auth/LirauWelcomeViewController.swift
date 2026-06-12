@@ -82,21 +82,14 @@ final class LirauWelcomeViewController: UIViewController {
         appleButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(appleButton)
 
-        let termsStack = UIStackView()
-        termsStack.axis = .horizontal
-        termsStack.alignment = .center
-        termsStack.spacing = 6
+        let termsStack = LirauLegalLinksView()
         termsStack.translatesAutoresizingMaskIntoConstraints = false
-
-        let privacyButton = makeLinkButton(title: "Privacy Policy", action: #selector(openPrivacy))
-        let separatorLabel = UILabel()
-        separatorLabel.text = "and"
-        separatorLabel.font = .systemFont(ofSize: 10)
-        separatorLabel.textColor = LirauTheme.mutedText
-        let termsButton = makeLinkButton(title: "Terms of Service", action: #selector(openTerms))
-        termsStack.addArrangedSubview(privacyButton)
-        termsStack.addArrangedSubview(separatorLabel)
-        termsStack.addArrangedSubview(termsButton)
+        termsStack.onPrivacyTapped = { [weak self] in
+            self?.openPrivacy()
+        }
+        termsStack.onTermsTapped = { [weak self] in
+            self?.openTerms()
+        }
         contentView.addSubview(termsStack)
 
         agreementButton.translatesAutoresizingMaskIntoConstraints = false
@@ -151,15 +144,6 @@ final class LirauWelcomeViewController: UIViewController {
         ])
     }
 
-    private func makeLinkButton(title: String, action: Selector) -> UIButton {
-        let button = UIButton(type: .system)
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(UIColor(white: 1, alpha: 0.72), for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 10, weight: .medium)
-        button.addTarget(self, action: action, for: .touchUpInside)
-        return button
-    }
-
     private func updateAgreementState() {
         agreementButton.isAgreed = LirauAuthStore.shared.hasAgreedEULA
     }
@@ -189,21 +173,44 @@ final class LirauWelcomeViewController: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    @objc private func openPrivacy() {
-        navigationController?.pushViewController(LirauTermsViewController(kind: .privacy), animated: true)
+    private func openPrivacy() {
+        openLegalWebPath(LirauWebRoute.privacyPolicyPath())
     }
 
-    @objc private func openTerms() {
-        navigationController?.pushViewController(LirauTermsViewController(kind: .terms), animated: true)
+    private func openTerms() {
+        openLegalWebPath(LirauWebRoute.userAgreementPath())
+    }
+
+    private func openLegalWebPath(_ path: String) {
+        let controller = LirauWebPortalViewController(entryURLString: path)
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     private func showEULA() {
         let message = """
-        This service is not a random, anonymous, adult, or suggestive chat service.
+        Effective Date: June 1, 2026
 
-        Users must follow community conduct rules, meet account registration requirements, respect age and local identity laws, use report and block tools when needed, and accept strict content review and penalties for violations.
+        Contact Email: liraU@gmail.com
+
+        This End User License Agreement ("Agreement") is a binding legal contract between you and LiraU. By installing, accessing, or using the LiraU mobile application ("Application"), you agree to be bound by the terms of this Agreement. LiraU grants you a personal, revocable, non-exclusive, non-transferable, and limited license to download, install, and use the Application strictly for your personal, non-commercial entertainment and language learning purposes on a compatible mobile device.
+
+        User Behavior Restrictions
+        LiraU is an innovative social ecosystem dedicated to global friendship and linguistic exploration. To preserve this harmonious environment, your behavioral conduct must remain exemplary. You are strictly prohibited from utilizing the Application to:
+
+        Engage in, facilitate, or promote any form of harassment, hate speech, discrimination, or verbal abuse targeted at regional accents, cultural traditions, or national origins.
+
+        Transmit, broadcast, or upload any obscene, profane, defamatory, or sexually explicit content via audio streaming, video snippets, or live video calls.
+
+        Deploy automated systems, including data-scraping bots or artificial voice synthesizers, to manipulate language matches, spoof real-time translations, or harvest user data.
+
+        Disrupt the interactive speech mechanisms or deliberately degrade the audio quality of community chatrooms through sonic interference or malicious reporting.
+
+        Impersonate any native speakers, language mentors, or LiraU representatives to defraud or mislead users regarding cultural backgrounds.
+
+        Termination of License
+        LiraU reserves the absolute, unilateral right to monitor user content and terminate or suspend your license and access to the Application immediately, without prior notice or liability, for any reason whatsoever. Reasons for termination include, but are not limited to, a breach of any user behavior restrictions outlined above, a formal community report indicating cultural intolerance, or a violation of local laws. Upon termination, your right to use the Application will cease instantly. You must immediately delete all copies of the Application from your devices. LiraU is not responsible for any loss of conversational history, cross-cultural connections, or virtual milestones resulting from license termination.
         """
-        let alert = UIAlertController(title: "LiraU EULA", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "LiraU End User License Agreement (EULA)", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Agree", style: .default) { _ in
             LirauAuthStore.shared.hasAgreedEULA = true
             self.updateAgreementState()

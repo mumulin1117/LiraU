@@ -45,9 +45,9 @@
 
     self.addButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.addButton.translatesAutoresizingMaskIntoConstraints = NO;
-    self.addButton.backgroundColor = UIColor.whiteColor;
+    self.addButton.backgroundColor = UIColor.clearColor;
     self.addButton.layer.cornerRadius = 22;
-    [self.addButton setImage:[UIImage imageNamed:@"lira_video_add_icon"] forState:UIControlStateNormal];
+    [self.addButton setImage:[UIImage imageNamed:@"lira_video_publish_add_button"] forState:UIControlStateNormal];
     [self.addButton addTarget:self action:@selector(didTapAdd) forControlEvents:UIControlEventTouchUpInside];
     self.addButton.accessibilityLabel = @"LiraU video add";
     [self addSubview:self.addButton];

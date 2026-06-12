@@ -17,6 +17,25 @@ static NSInteger LirauIntegerValue(id value) {
     return 0;
 }
 
+static NSString *LirauFirstImageURLValue(id value) {
+    if ([value isKindOfClass:NSArray.class]) {
+        id firstObject = [(NSArray *)value firstObject];
+        if ([firstObject isKindOfClass:NSString.class]) {
+            return LirauStringValue(firstObject);
+        }
+        if ([firstObject isKindOfClass:NSDictionary.class]) {
+            NSDictionary *dictionary = (NSDictionary *)firstObject;
+            for (NSString *key in @[@"url", @"imgUrl", @"imageUrl", @"languageSyllabusLoraua"]) {
+                NSString *urlString = LirauStringValue(dictionary[key]);
+                if (urlString.length > 0) {
+                    return urlString;
+                }
+            }
+        }
+    }
+    return LirauStringValue(value);
+}
+
 @implementation LirauHomeUserRecommendation
 
 + (instancetype)modelWithDictionary:(NSDictionary *)dictionary {
@@ -36,7 +55,7 @@ static NSInteger LirauIntegerValue(id value) {
     model.userId = [[NSUUID UUID] UUIDString];
     model.name = name;
     model.brief = brief;
-    model.avatarURLString = @"";
+    model.avatarURLString = @"lira_profile_avatar_default";
     return model;
 }
 
@@ -55,10 +74,11 @@ static NSInteger LirauIntegerValue(id value) {
     model.storeCount = LirauIntegerValue(dictionary[@"communityBuildingLoraua"]);
     model.commentCount = LirauIntegerValue(dictionary[@"audioChattingLoraua"]);
 
-    id images = dictionary[@"languageExchangeLoraua"] ?: dictionary[@"interactiveLearningLoraua"];
-    if ([images isKindOfClass:NSArray.class] && [(NSArray *)images count] > 0) {
-        model.imageURLString = LirauStringValue([(NSArray *)images firstObject]);
-    } else {
+    model.imageURLString = LirauFirstImageURLValue(dictionary[@"languageExchangeLoraua"]);
+    if (model.imageURLString.length == 0) {
+        model.imageURLString = LirauFirstImageURLValue(dictionary[@"interactiveLearningLoraua"]);
+    }
+    if (model.imageURLString.length == 0) {
         model.imageURLString = LirauStringValue(dictionary[@"languageSyllabusLoraua"]);
     }
 
@@ -74,8 +94,8 @@ static NSInteger LirauIntegerValue(id value) {
     model.title = title;
     model.content = content;
     model.userName = @"LiraU";
-    model.imageURLString = @"";
-    model.userAvatarURLString = @"";
+    model.imageURLString = @"lira_profile_post_placeholder";
+    model.userAvatarURLString = @"lira_profile_avatar_default";
     model.praiseCount = 142;
     model.storeCount = 142;
     model.commentCount = 24;

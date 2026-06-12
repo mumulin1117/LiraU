@@ -3,6 +3,7 @@
 #import "LirauVideoTopTabsView.h"
 #import "LirauVideoCell.h"
 #import "LirauVideoStateView.h"
+#import "LirauLnBuor-Swift.h"
 
 @interface LirauVideoViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -59,8 +60,8 @@
         [weakSelf loadFirstPage];
     };
     self.topTabsView.addHandler = ^{
-        NSLog(@"LiraU Video TODO: Add video entry tapped");
-        // TODO: Open video publish page after the publish module is implemented.
+        NSLog(@"LiraU Video add entry tapped");
+        [weakSelf openLirauWebPath:[LirauWebRoute postVideoPath]];
     };
     [self.view addSubview:self.topTabsView];
 
@@ -149,24 +150,20 @@
         [weakSelf.collectionView reloadItemsAtIndexPaths:@[indexPath]];
     };
     cell.commentHandler = ^{
-        NSLog(@"LiraU Video TODO: Comment tapped for %@", item.dynamicId);
-        // TODO: Open comments after the comment module is implemented.
+        NSLog(@"LiraU Video comment tapped for %@", item.dynamicId);
+        [weakSelf openLirauWebPath:[LirauWebRoute dynamicDetailPathWithDynamicID:item.dynamicId]];
     };
-    cell.giftHandler = ^{
-        NSLog(@"LiraU Video TODO: Gift tapped for %@", item.dynamicId);
-        // TODO: Open gift panel after gift and payment modules are implemented.
-    };
-    cell.shareHandler = ^{
-        NSLog(@"LiraU Video TODO: Share tapped for %@", item.dynamicId);
-        // TODO: Open share sheet after share module is implemented.
+    cell.reportHandler = ^{
+        NSLog(@"LiraU Video report item %@", item.dynamicId);
+        [weakSelf openLirauWebPath:[LirauWebRoute reportPathWithDynamicID:item.dynamicId userID:item.userId]];
     };
     cell.userHandler = ^{
-        NSLog(@"LiraU Video TODO: User tapped %@", item.userId);
-        // TODO: Open user profile after profile detail module is implemented.
+        NSLog(@"LiraU Video user tapped %@", item.userId);
+        [weakSelf openLirauWebPath:[LirauWebRoute learnerProfilePathWithUserID:item.userId]];
     };
     cell.videoHandler = ^{
-        NSLog(@"LiraU Video TODO: Video card tapped %@", item.dynamicId);
-        // TODO: Open video detail after detail module is implemented.
+        NSLog(@"LiraU Video card tapped %@", item.dynamicId);
+        [weakSelf openLirauWebPath:[LirauWebRoute dynamicDetailPathWithDynamicID:item.dynamicId]];
     };
     return cell;
 }
@@ -185,6 +182,15 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [self.collectionView.collectionViewLayout invalidateLayout];
+}
+
+- (void)openLirauWebPath:(NSString *)path {
+    if (path.length == 0) {
+        return;
+    }
+    LirauWebPortalViewController *controller = [[LirauWebPortalViewController alloc] initWithEntryURLString:path];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

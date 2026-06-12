@@ -7,6 +7,7 @@ final class LirauLoginViewController: UIViewController, UITextFieldDelegate, UIG
     private let contentView = UIView()
     private let emailField = LirauTextField(placeholder: "Enter email address", iconName: "lira_auth_email_icon")
     private let passwordField = LirauTextField(placeholder: "Enter password", isSecure: true, iconName: "lira_auth_password_icon")
+    private let loginButton = LirauPrimaryButton(title: "Sign in now")
     private weak var activeField: UITextField?
     private var keyboardObservers: [NSObjectProtocol] = []
 
@@ -59,7 +60,6 @@ final class LirauLoginViewController: UIViewController, UITextFieldDelegate, UIG
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(passwordField)
 
-        let loginButton = LirauPrimaryButton(title: "Sign in now")
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         contentView.addSubview(loginButton)
@@ -69,6 +69,16 @@ final class LirauLoginViewController: UIViewController, UITextFieldDelegate, UIG
         agreementButton.translatesAutoresizingMaskIntoConstraints = false
         agreementButton.addTarget(self, action: #selector(toggleAgreement), for: .touchUpInside)
         contentView.addSubview(agreementButton)
+
+        let legalLinksView = LirauLegalLinksView()
+        legalLinksView.translatesAutoresizingMaskIntoConstraints = false
+        legalLinksView.onPrivacyTapped = { [weak self] in
+            self?.openPrivacyPolicy()
+        }
+        legalLinksView.onTermsTapped = { [weak self] in
+            self?.openTermsOfService()
+        }
+        contentView.addSubview(legalLinksView)
 
         NSLayoutConstraint.activate([
             backdropView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -112,8 +122,11 @@ final class LirauLoginViewController: UIViewController, UITextFieldDelegate, UIG
 
             agreementButton.leadingAnchor.constraint(equalTo: emailField.leadingAnchor),
             agreementButton.trailingAnchor.constraint(equalTo: emailField.trailingAnchor),
-            agreementButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 112),
-            agreementButton.bottomAnchor.constraint(lessThanOrEqualTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            agreementButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 92),
+
+            legalLinksView.topAnchor.constraint(equalTo: agreementButton.bottomAnchor, constant: 4),
+            legalLinksView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            legalLinksView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
 
@@ -130,19 +143,42 @@ final class LirauLoginViewController: UIViewController, UITextFieldDelegate, UIG
         sender.isAgreed = LirauAuthStore.shared.hasAgreedEULA
     }
 
+    private func openPrivacyPolicy() {
+        openLegalWebPath(LirauWebRoute.privacyPolicyPath())
+    }
+
+    private func openTermsOfService() {
+        openLegalWebPath(LirauWebRoute.userAgreementPath())
+    }
+
+    private func openLegalWebPath(_ path: String) {
+        view.endEditing(true)
+        let controller = LirauWebPortalViewController(entryURLString: path)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
     @objc private func login() {
         view.endEditing(true)
         guard LirauAuthStore.shared.hasAgreedEULA else {
             lirauShowAlert(title: "Agreement required", message: "Please agree to LiraU safety terms before continuing.")
             return
         }
-        let result = LirauAuthStore.shared.login(email: emailField.text ?? "", password: passwordField.text ?? "")
-        switch result {
-        case .success:
-            onAuthenticated?()
-        case .failure(let error):
-            lirauShowAlert(title: "Login failed", message: error.message)
+        setSubmitting(true)
+        LirauAuthStore.shared.login(email: emailField.text ?? "", password: passwordField.text ?? "") { [weak self] result in
+            guard let self else { return }
+            self.setSubmitting(false)
+            switch result {
+            case .success:
+                self.onAuthenticated?()
+            case .failure(let error):
+                self.lirauShowAlert(title: "Login failed", message: error.message)
+            }
         }
+    }
+
+    private func setSubmitting(_ submitting: Bool) {
+        loginButton.isEnabled = !submitting
+        loginButton.alpha = submitting ? 0.65 : 1
     }
 
     private func setupKeyboardHandling() {

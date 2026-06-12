@@ -1,8 +1,8 @@
 #import "LirauVideoManager.h"
+#import "LirauCipherText.h"
 
-static NSString *const LirauVideoBaseURLString = @"http://a1d2f4s6g8h9j3k5.shop/backtwo";
-static NSString *const LirauVideoDynamicListPath = @"/godoacxwlytpcwtz/btuwf";
-static NSString *const LirauVideoSuccessCode = @"0000";
+static NSString *LirauVideoBaseURLString(void) { return [LirauCipherText backendBaseURL]; }
+static NSString *LirauVideoDynamicListPath(void) { return [LirauCipherText dynamicListPath]; }
 
 @interface LirauVideoManager ()
 
@@ -25,8 +25,8 @@ static NSString *const LirauVideoSuccessCode = @"0000";
     self = [super init];
     if (self) {
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        configuration.timeoutIntervalForRequest = 8;
-        configuration.timeoutIntervalForResource = 12;
+        configuration.timeoutIntervalForRequest = 30;
+        configuration.timeoutIntervalForResource = 30;
         _session = [NSURLSession sessionWithConfiguration:configuration];
     }
     return self;
@@ -41,7 +41,7 @@ static NSString *const LirauVideoSuccessCode = @"0000";
         @"audioStreamingLoraua": @(MAX(page, 1)),
         @"userEngagementLoraua": @(MAX(pageSize, 1))
     };
-    [self requestPath:LirauVideoDynamicListPath parameters:parameters completion:^(id _Nullable data, NSError *_Nullable error) {
+    [self requestPath:LirauVideoDynamicListPath() parameters:parameters completion:^(id _Nullable data, NSError *_Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 completion([self mockItems], error, NO, YES);
@@ -60,36 +60,47 @@ static NSString *const LirauVideoSuccessCode = @"0000";
 - (void)requestPath:(NSString *)path
          parameters:(NSDictionary *)parameters
          completion:(void (^)(id _Nullable data, NSError *_Nullable error))completion {
-    NSURL *url = [NSURL URLWithString:[LirauVideoBaseURLString stringByAppendingString:path]];
+    NSURL *url = [NSURL URLWithString:[LirauVideoBaseURLString() stringByAppendingString:path]];
     if (!url) {
         completion(nil, [NSError errorWithDomain:@"LirauVideo" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"Invalid video endpoint."}]);
         return;
     }
 
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    request.HTTPMethod = @"POST";
-    request.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPMethod = [LirauCipherText httpPostMethod];
+    request.cachePolicy = NSURLRequestUseProtocolCachePolicy;
+    [request setValue:[LirauCipherText jsonMimeType] forHTTPHeaderField:[LirauCipherText contentTypeHeader]];
+    [request setValue:[LirauCipherText jsonMimeType] forHTTPHeaderField:[LirauCipherText acceptHeader]];
+    [request setValue:[LirauCipherText appKey] forHTTPHeaderField:[LirauCipherText keyHeader]];
+    [request setValue:[self sessionTokenLoraua] forHTTPHeaderField:[LirauCipherText tokenHeader]];
     request.HTTPBody = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    NSLog(@"LiraU API Request Video: url=%@ params=%@ token=%@", url.absoluteString, [self debugJSONStringFromObject:parameters], [self maskedSessionTokenLoraua]);
 
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
+            NSLog(@"LiraU API Failure Video: url=%@ error=%@", url.absoluteString, error.localizedDescription);
             completion(nil, error);
             return;
         }
+        NSInteger statusCode = [response isKindOfClass:NSHTTPURLResponse.class] ? ((NSHTTPURLResponse *)response).statusCode : -1;
+        NSString *rawText = data.length > 0 ? [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] : @"<empty response>";
+        NSLog(@"LiraU API Response Video: url=%@ status=%ld raw=%@", url.absoluteString, (long)statusCode, rawText ?: @"<non-utf8 response>");
+
         NSError *jsonError = nil;
         id json = data ? [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError] : nil;
         if (jsonError || ![json isKindOfClass:NSDictionary.class]) {
+            NSLog(@"LiraU API Invalid Video: url=%@ error=%@", url.absoluteString, jsonError.localizedDescription ?: @"Invalid video response.");
             completion(nil, jsonError ?: [NSError errorWithDomain:@"LirauVideo" code:-2 userInfo:@{NSLocalizedDescriptionKey: @"Invalid video response."}]);
             return;
         }
         NSDictionary *dictionary = (NSDictionary *)json;
-        NSString *code = [NSString stringWithFormat:@"%@", dictionary[@"code"] ?: dictionary[@"status"] ?: @""];
-        if (![code isEqualToString:LirauVideoSuccessCode]) {
-            completion(nil, [NSError errorWithDomain:@"LirauVideo" code:-3 userInfo:@{NSLocalizedDescriptionKey: @"Video request did not return success code 0000."}]);
+        NSString *code = [NSString stringWithFormat:@"%@", dictionary[[LirauCipherText responseCodeKey]] ?: dictionary[[LirauCipherText responseStatusKey]] ?: @""];
+        NSLog(@"LiraU API Parsed Video: path=%@ code=%@ data=%@", path, code, [self debugJSONStringFromObject:dictionary[[LirauCipherText responseDataKey]]]);
+        if (![self isSuccessCode:code]) {
+            completion(nil, [NSError errorWithDomain:@"LirauVideo" code:-3 userInfo:@{NSLocalizedDescriptionKey: @"Video request did not return success code."}]);
             return;
         }
-        completion(dictionary[@"data"], nil);
+        completion(dictionary[[LirauCipherText responseDataKey]], nil);
     }];
     [task resume];
 }
@@ -116,7 +127,7 @@ static NSString *const LirauVideoSuccessCode = @"0000";
         return @[];
     }
     NSDictionary *dictionary = (NSDictionary *)data;
-    for (NSString *key in @[@"list", @"records", @"rows", @"data"]) {
+    for (NSString *key in [LirauCipherText listContainerKeys]) {
         id value = dictionary[key];
         if ([value isKindOfClass:NSArray.class]) {
             return value;
@@ -133,7 +144,38 @@ static NSString *const LirauVideoSuccessCode = @"0000";
 }
 
 - (NSString *)bundleIdentifier {
-    return NSBundle.mainBundle.bundleIdentifier ?: @"com.lirau.lnbuor";
+    return [LirauCipherText appKey];
+}
+
+- (NSString *)sessionTokenLoraua {
+    NSString *token = [NSUserDefaults.standardUserDefaults objectForKey:[LirauCipherText sessionTokenStorageKey]];
+    return [token isKindOfClass:NSString.class] ? token : @"";
+}
+
+- (BOOL)isSuccessCode:(NSString *)code {
+    return [code isEqualToString:[LirauCipherText primarySuccessCode]] || [code isEqualToString:[LirauCipherText secondarySuccessCode]];
+}
+
+- (NSString *)maskedSessionTokenLoraua {
+    NSString *token = [self sessionTokenLoraua];
+    if (token.length == 0) {
+        return @"<empty>";
+    }
+    if (token.length <= 8) {
+        return @"<masked>";
+    }
+    return [NSString stringWithFormat:@"%@...%@", [token substringToIndex:4], [token substringFromIndex:token.length - 4]];
+}
+
+- (NSString *)debugJSONStringFromObject:(id)object {
+    if (!object) {
+        return @"<nil>";
+    }
+    if (![NSJSONSerialization isValidJSONObject:object]) {
+        return [object description] ?: @"<nil>";
+    }
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:NSJSONWritingSortedKeys error:nil];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] ?: ([object description] ?: @"<nil>");
 }
 
 @end

@@ -4,6 +4,7 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIButton *reportButton;
 @property (nonatomic, strong) CAGradientLayer *placeholderLayer;
 @property (nonatomic, strong) CAGradientLayer *shadeLayer;
 @property (nonatomic, copy) NSString *currentImageURLString;
@@ -26,7 +27,7 @@
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    self.imageView.image = nil;
+    self.imageView.image = [UIImage imageNamed:@"lira_profile_post_placeholder"];
     self.currentImageURLString = @"";
 }
 
@@ -75,11 +76,21 @@
     _titleLabel.clipsToBounds = YES;
     [self.contentView addSubview:_titleLabel];
 
+    _reportButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _reportButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [_reportButton setImage:[UIImage imageNamed:@"lira_video_alert_button"] forState:UIControlStateNormal];
+    [_reportButton addTarget:self action:@selector(didTapReport) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:_reportButton];
+
     [NSLayoutConstraint activateConstraints:@[
         [_imageView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor],
         [_imageView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor],
         [_imageView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor],
         [_imageView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor],
+        [_reportButton.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:12],
+        [_reportButton.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-12],
+        [_reportButton.widthAnchor constraintEqualToConstant:30],
+        [_reportButton.heightAnchor constraintEqualToConstant:30],
         [_titleLabel.leadingAnchor constraintGreaterThanOrEqualToAnchor:self.contentView.leadingAnchor constant:18],
         [_titleLabel.trailingAnchor constraintLessThanOrEqualToAnchor:self.contentView.trailingAnchor constant:-18],
         [_titleLabel.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor],
@@ -92,29 +103,59 @@
     self.titleLabel.text = item.title;
     self.contentView.alpha = highlightedCard ? 1.0 : 0.70;
     self.currentImageURLString = item.imageURLString ?: @"";
+    self.imageView.image = [UIImage imageNamed:@"lira_profile_post_placeholder"];
     [self loadImageFromURLString:self.currentImageURLString];
 }
 
 - (void)loadImageFromURLString:(NSString *)urlString {
-    if (urlString.length == 0) {
+    UIImage *fallbackImage = [UIImage imageNamed:@"lira_profile_post_placeholder"];
+    NSString *trimmedURLString = [urlString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (trimmedURLString.length == 0) {
+        self.imageView.image = fallbackImage;
         return;
     }
-    NSURL *url = [NSURL URLWithString:urlString];
+
+    UIImage *assetImage = [UIImage imageNamed:trimmedURLString];
+    if (assetImage) {
+        self.imageView.image = assetImage;
+        return;
+    }
+
+    if ([trimmedURLString hasPrefix:@"//"]) {
+        trimmedURLString = [@"http:" stringByAppendingString:trimmedURLString];
+    } else if ([trimmedURLString hasPrefix:@"www."]) {
+        trimmedURLString = [@"http://" stringByAppendingString:trimmedURLString];
+    }
+
+    NSURL *url = [NSURL URLWithString:trimmedURLString];
     if (!url) {
+        NSString *encodedURLString = [trimmedURLString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        url = [NSURL URLWithString:encodedURLString];
+    }
+    if (!url) {
+        self.imageView.image = fallbackImage;
         return;
     }
     __weak typeof(self) weakSelf = self;
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (error || data.length == 0) {
-            return;
+        UIImage *image = nil;
+        if (!error && data.length > 0) {
+            image = [UIImage imageWithData:data];
         }
-        UIImage *image = [UIImage imageWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
-            if ([weakSelf.currentImageURLString isEqualToString:urlString]) {
-                weakSelf.imageView.image = image;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (!strongSelf || ![strongSelf.currentImageURLString isEqualToString:urlString]) {
+                return;
             }
+            strongSelf.imageView.image = image ?: fallbackImage;
         });
     }] resume];
+}
+
+- (void)didTapReport {
+    if (self.reportHandler) {
+        self.reportHandler();
+    }
 }
 
 @end

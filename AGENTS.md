@@ -7,16 +7,15 @@
 ---
 
 ## ⚙️ 1. App 基础信息 (App Identity)
+* **App ID：81266843
+* **App 标题：LiraU - Say Hello World & Chat
+* **App 副标题：暂无
+* **蓝湖设计链接： https://lanhuapp.com/web/#/item/project/stage?pid=efab5451-60b2-48bb-a48c-8f1ba9d9947a&tid=8c379c32-0bd6-44ae-ab3b-cfb09ffccdbf
 
-* **App 标题：** LiraU - Say Hello World & Chat
-* **App 副标题：** *[暂无]*
-* **蓝湖设计链接：** https://lanhuapp.com/web/#/item/project/stage?pid=efab5451-60b2-48bb-a48c-8f1ba9d9947a&tid=8c379c32-0bd6-44ae-ab3b-cfb09ffccdbf
-
-* **App Store 描述：**
+* **App Store 描述：
 > LiraU is an innovative social app that lets you explore the world and make friends through language. Imagine practicing your Spanish and making friends from Mexico with a simple joke. Learning is no longer a tedious activity; it becomes a truly social experience.
 > People come together to hear stories from diverse accents and share their daily lives with people on the other side of the world. Join a community to chat about life and culture; watch short videos to see how others express themselves through language; or simply chat and video call to explore similarities and differences, taking communication to the next level.
 > LiraU lets you meet new people through conversation and laughter across languages. Come join us!
-
 
 
 ---
@@ -25,9 +24,9 @@
 
 ### 2.1 基础网络设定 (Base URL)
 
-* **项目后端根路径 (Base URL)：** http://www.modernlifestylehub99globalmarket.shop
+* **项目后端根路径 (Base URL)：** http://a1d2f4s6g8h9j3k5.shop
 * **统一状态码机制：** 当且仅当接口返回状态码为 `"0000"` 时，代表请求成功。获取 `data` 数据后需转化成字典（Dictionary / Map）进行解析。
-
+请求头中需要注入key=appid，token=登录返回的用户token
 ### 2.2 接口混淆文件 (Obfuscation Mapping File)
 
 * **混淆配置文件名：** `LiraU-接口混淆.json`[cite: 1]
@@ -119,7 +118,7 @@
 
 1. 用户在 UI 交互层输入 `email` 和 `password`。
 2. 客户端非空校验：若为空，给出相应的提示，且中断后续逻辑。
-3. **测试账号分支：** 若用户输入的 `email` 恰好等于测试账号（`lariau@gmail.com`），且密码匹配正确（`454545`），则直接模拟登录接口请求。登录成功后，从模拟响应字典中解析并保存 `userID`、`Token` 等基础凭证，直接准入。
+3.登录接口请求。登录成功后，从模拟响应字典中解析并保存 `userID`、`Token` 等基础凭证，准入。
 4. **非测试账号分支：** 检查本地持久化存储（如本地数据库/沙盒缓存）中是否存在该 `email` 的注册记录：
 * 若本地完全没有该邮箱记录，明确提示：`Account does not exist.`
 * 若本地存在该邮箱记录但密码错误，明确提示：`Incorrect password.`

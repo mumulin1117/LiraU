@@ -4,6 +4,7 @@
 #import "LirauProfileEmptyView.h"
 #import "LirauProfilePostCell.h"
 #import "LirauProfileManager.h"
+#import "LirauLnBuor-Swift.h"
 
 typedef NS_ENUM(NSInteger, LirauProfileSegment) {
     LirauProfileSegmentPosts,
@@ -237,22 +238,29 @@ typedef NS_ENUM(NSInteger, LirauProfileSegment) {
 
 - (void)handleSettingsTap {
     NSLog(@"LiraU Profile settings tapped");
-    // TODO: Open profile settings after Settings module is implemented.
+    [self openLirauWebPath:[LirauWebRoute settingsPath]];
 }
 
 - (void)handleEditTap {
     NSLog(@"LiraU Profile edit tapped");
-    // TODO: Open edit profile after Profile Edit module is implemented.
+    [self openLirauWebPath:[LirauWebRoute editProfilePath]];
 }
 
 - (void)handleWalletTap {
     NSLog(@"LiraU Profile wallet tapped");
-    // TODO: Open wallet after Wallet module is implemented.
+    [self openLirauWebPath:[LirauWebRoute walletPath]];
 }
 
 - (void)handleStatTap:(NSString *)statName {
     NSLog(@"LiraU Profile stat tapped: %@", statName);
-    // TODO: Open following/followers/post list after Relation module is implemented.
+    if ([statName isEqualToString:@"Following"]) {
+        [self openLirauWebPath:[LirauWebRoute relationListPathWithType:1]];
+    } else if ([statName isEqualToString:@"Followers"]) {
+        [self openLirauWebPath:[LirauWebRoute relationListPathWithType:2]];
+    } else if ([statName isEqualToString:@"Post"]) {
+        NSString *userID = self.profileContent.user.userID ?: @"";
+        [self openLirauWebPath:[LirauWebRoute learnerProfilePathWithUserID:userID]];
+    }
 }
 
 - (void)handleSegmentTap:(UIButton *)sender {
@@ -281,7 +289,7 @@ typedef NS_ENUM(NSInteger, LirauProfileSegment) {
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     LirauProfilePost *post = self.visiblePosts[indexPath.item];
     NSLog(@"LiraU Profile post tapped: %@", post.title);
-    // TODO: Open profile post detail after Detail module is implemented.
+    [self openLirauWebPath:[LirauWebRoute dynamicDetailPathWithDynamicID:post.postID]];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -291,6 +299,15 @@ typedef NS_ENUM(NSInteger, LirauProfileSegment) {
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat width = CGRectGetWidth(collectionView.bounds);
     return CGSizeMake(width, MAX(220, width * 0.70));
+}
+
+- (void)openLirauWebPath:(NSString *)path {
+    if (path.length == 0) {
+        return;
+    }
+    LirauWebPortalViewController *controller = [[LirauWebPortalViewController alloc] initWithEntryURLString:path];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

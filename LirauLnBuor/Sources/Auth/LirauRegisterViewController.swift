@@ -7,6 +7,7 @@ final class LirauRegisterViewController: UIViewController, UITextFieldDelegate, 
     private let contentView = UIView()
     private let emailField = LirauTextField(placeholder: "Enter email address", iconName: "lira_auth_email_icon")
     private let passwordField = LirauTextField(placeholder: "Enter password", isSecure: true, iconName: "lira_auth_password_icon")
+    private let nextButton = LirauPrimaryButton(title: "Next")
     private weak var activeField: UITextField?
     private var keyboardObservers: [NSObjectProtocol] = []
 
@@ -60,10 +61,19 @@ final class LirauRegisterViewController: UIViewController, UITextFieldDelegate, 
         passwordField.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(passwordField)
 
-        let nextButton = LirauPrimaryButton(title: "Next")
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.addTarget(self, action: #selector(continueToProfile), for: .touchUpInside)
         contentView.addSubview(nextButton)
+
+        let legalLinksView = LirauLegalLinksView()
+        legalLinksView.translatesAutoresizingMaskIntoConstraints = false
+        legalLinksView.onPrivacyTapped = { [weak self] in
+            self?.openPrivacyPolicy()
+        }
+        legalLinksView.onTermsTapped = { [weak self] in
+            self?.openTermsOfService()
+        }
+        contentView.addSubview(legalLinksView)
 
         NSLayoutConstraint.activate([
             backdropView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -104,7 +114,9 @@ final class LirauRegisterViewController: UIViewController, UITextFieldDelegate, 
             nextButton.leadingAnchor.constraint(equalTo: emailField.leadingAnchor),
             nextButton.trailingAnchor.constraint(equalTo: emailField.trailingAnchor),
             nextButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 24),
-            nextButton.bottomAnchor.constraint(lessThanOrEqualTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+            legalLinksView.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 18),
+            legalLinksView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            legalLinksView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -34)
         ])
     }
 
@@ -116,8 +128,24 @@ final class LirauRegisterViewController: UIViewController, UITextFieldDelegate, 
         view.endEditing(true)
     }
 
+    private func openPrivacyPolicy() {
+        openLegalWebPath(LirauWebRoute.privacyPolicyPath())
+    }
+
+    private func openTermsOfService() {
+        openLegalWebPath(LirauWebRoute.userAgreementPath())
+    }
+
+    private func openLegalWebPath(_ path: String) {
+        view.endEditing(true)
+        let controller = LirauWebPortalViewController(entryURLString: path)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
     @objc private func continueToProfile() {
         view.endEditing(true)
+        nextButton.isEnabled = false
+        defer { nextButton.isEnabled = true }
         let password = passwordField.text ?? ""
         switch LirauAuthStore.shared.canRegister(email: emailField.text ?? "", password: password) {
         case .success(let email):

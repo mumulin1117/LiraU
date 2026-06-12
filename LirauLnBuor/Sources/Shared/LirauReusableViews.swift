@@ -186,3 +186,45 @@ final class LirauAgreementButton: UIButton {
         setImage(UIImage(named: name)?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
 }
+
+final class LirauLegalLinksView: UIStackView {
+    var onPrivacyTapped: (() -> Void)?
+    var onTermsTapped: (() -> Void)?
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        axis = .horizontal
+        alignment = .center
+        distribution = .fill
+        spacing = 6
+
+        let privacyButton = makeLinkButton(title: "Privacy Policy") { [weak self] in
+            self?.onPrivacyTapped?()
+        }
+        let separatorLabel = UILabel()
+        separatorLabel.text = "and"
+        separatorLabel.font = .systemFont(ofSize: 10)
+        separatorLabel.textColor = LirauTheme.mutedText
+        let termsButton = makeLinkButton(title: "Terms of Service") { [weak self] in
+            self?.onTermsTapped?()
+        }
+
+        addArrangedSubview(privacyButton)
+        addArrangedSubview(separatorLabel)
+        addArrangedSubview(termsButton)
+    }
+
+    @available(*, unavailable)
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func makeLinkButton(title: String, action: @escaping () -> Void) -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(UIColor(white: 1, alpha: 0.72), for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 10, weight: .medium)
+        button.addAction(UIAction { _ in action() }, for: .touchUpInside)
+        return button
+    }
+}

@@ -9,6 +9,7 @@ final class LirauProfileSetupViewController: UIViewController, UITextFieldDelega
     private let contentView = UIView()
     private let nameField = LirauTextField(placeholder: "Enter your name")
     private let introField = LirauTextField(placeholder: "Say something")
+    private let finishButton = LirauPrimaryButton(title: "Sign Up")
     private weak var activeField: UITextField?
     private var keyboardObservers: [NSObjectProtocol] = []
 
@@ -73,7 +74,6 @@ final class LirauProfileSetupViewController: UIViewController, UITextFieldDelega
         introField.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(introField)
 
-        let finishButton = LirauPrimaryButton(title: "Sign Up")
         finishButton.translatesAutoresizingMaskIntoConstraints = false
         finishButton.addTarget(self, action: #selector(finishRegistration), for: .touchUpInside)
         contentView.addSubview(finishButton)
@@ -135,14 +135,28 @@ final class LirauProfileSetupViewController: UIViewController, UITextFieldDelega
 
         let profile = LirauUserProfile(
             userID: UUID().uuidString,
-            token: password,
+            Token: password,
             email: email,
             displayName: name?.isEmpty == false ? name! : "LiraU Learner",
             profileIntroLoraua: intro?.isEmpty == false ? intro! : "Ready to share everyday language and culture.",
             languagePairingLoraua: "English - Global culture"
         )
-        LirauAuthStore.shared.register(profile: profile)
-        onAuthenticated?()
+        setSubmitting(true)
+        LirauAuthStore.shared.register(profile: profile, password: password) { [weak self] result in
+            guard let self else { return }
+            self.setSubmitting(false)
+            switch result {
+            case .success:
+                self.onAuthenticated?()
+            case .failure(let error):
+                self.lirauShowAlert(title: "Registration failed", message: error.message)
+            }
+        }
+    }
+
+    private func setSubmitting(_ submitting: Bool) {
+        finishButton.isEnabled = !submitting
+        finishButton.alpha = submitting ? 0.65 : 1
     }
 
     private func setupKeyboardHandling() {

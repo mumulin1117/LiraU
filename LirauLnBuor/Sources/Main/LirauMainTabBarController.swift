@@ -3,7 +3,6 @@ import UIKit
 final class LirauMainTabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
-        setValue(LirauLanhuTabBar(), forKey: "tabBar")
     }
 
     @available(*, unavailable)
@@ -40,6 +39,7 @@ final class LirauMainTabBarController: UITabBarController {
                 selectedIcon: "lira_tab_profile_selected"
             )
         ]
+        selectedIndex = 0
     }
 
     private func configureTabBarAppearance() {
@@ -47,14 +47,14 @@ final class LirauMainTabBarController: UITabBarController {
         tabBar.unselectedItemTintColor = nil
         tabBar.isTranslucent = false
         tabBar.itemPositioning = .fill
-        tabBar.backgroundColor = .clear
+        tabBar.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.18, alpha: 1)
         tabBar.backgroundImage = UIImage()
         tabBar.shadowImage = UIImage()
 
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .clear
-        appearance.shadowColor = .clear
+        appearance.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.18, alpha: 1)
+        appearance.shadowColor = UIColor(red: 0.11, green: 0.11, blue: 0.18, alpha: 1)
         appearance.stackedLayoutAppearance.normal.iconColor = nil
         appearance.stackedLayoutAppearance.selected.iconColor = nil
         appearance.inlineLayoutAppearance.normal.iconColor = nil
@@ -85,57 +85,57 @@ final class LirauMainTabBarController: UITabBarController {
     }
 }
 
-private final class LirauLanhuTabBar: UITabBar {
-    private let backgroundView = UIView()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupBackground()
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        var fittedSize = super.sizeThatFits(size)
-        let bottomInset = window?.safeAreaInsets.bottom ?? 0
-        fittedSize.height = 51 + bottomInset
-        return fittedSize
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        sendSubviewToBack(backgroundView)
-        backgroundView.frame = bounds
-        backgroundView.layer.cornerRadius = 18
-        backgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
-        let itemHeight: CGFloat = 51
-        let itemWidth = bounds.width / CGFloat(max(items?.count ?? 1, 1))
-        var index: CGFloat = 0
-        subviews
-            .filter { String(describing: type(of: $0)).contains("UITabBarButton") }
-            .sorted { $0.frame.minX < $1.frame.minX }
-            .forEach { itemView in
-                itemView.frame = CGRect(x: index * itemWidth, y: 0, width: itemWidth, height: itemHeight)
-                index += 1
-            }
-    }
-
-    private func setupBackground() {
-        isTranslucent = false
-        backgroundColor = .clear
-        backgroundImage = UIImage()
-        shadowImage = UIImage()
-
-        backgroundView.isUserInteractionEnabled = false
-        backgroundView.backgroundColor = UIColor(red: 0.114, green: 0.106, blue: 0.18, alpha: 1)
-        backgroundView.layer.shadowColor = UIColor.black.cgColor
-        backgroundView.layer.shadowOpacity = 0.24
-        backgroundView.layer.shadowRadius = 18
-        backgroundView.layer.shadowOffset = CGSize(width: 0, height: -8)
-        insertSubview(backgroundView, at: 0)
-    }
-}
+//private final class LirauLanhuTabBar: UITabBar {
+//    private let backgroundView = UIView()
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        setupBackground()
+//    }
+//
+//    @available(*, unavailable)
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//    override func sizeThatFits(_ size: CGSize) -> CGSize {
+//        var fittedSize = super.sizeThatFits(size)
+//        let bottomInset = window?.safeAreaInsets.bottom ?? 0
+//        fittedSize.height = 51 + bottomInset
+//        return fittedSize
+//    }
+//
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        sendSubviewToBack(backgroundView)
+//        backgroundView.frame = bounds
+//        backgroundView.layer.cornerRadius = 18
+//        backgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//
+//        let itemHeight: CGFloat = 51
+//        let itemWidth = bounds.width / CGFloat(max(items?.count ?? 1, 1))
+//        var index: CGFloat = 0
+//        subviews
+//            .filter { String(describing: type(of: $0)).contains("UITabBarButton") }
+//            .sorted { $0.frame.minX < $1.frame.minX }
+//            .forEach { itemView in
+//                itemView.frame = CGRect(x: index * itemWidth, y: 0, width: itemWidth, height: itemHeight)
+//                index += 1
+//            }
+//    }
+//
+//    private func setupBackground() {
+//        isTranslucent = false
+//        backgroundColor = .clear
+//        backgroundImage = UIImage()
+//        shadowImage = UIImage()
+//
+//        backgroundView.isUserInteractionEnabled = false
+//        backgroundView.backgroundColor = UIColor(red: 0.114, green: 0.106, blue: 0.18, alpha: 1)
+//        backgroundView.layer.shadowColor = UIColor.black.cgColor
+//        backgroundView.layer.shadowOpacity = 0.24
+//        backgroundView.layer.shadowRadius = 18
+//        backgroundView.layer.shadowOffset = CGSize(width: 0, height: -8)
+//        insertSubview(backgroundView, at: 0)
+//    }
+//}

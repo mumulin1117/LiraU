@@ -50,6 +50,10 @@
     self.balanceLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.balanceLabel.textColor = UIColor.whiteColor;
     self.balanceLabel.font = [UIFont systemFontOfSize:28 weight:UIFontWeightBold];
+    self.balanceLabel.text = @"0";
+    [self.balanceLabel setHidden:true];
+    self.balanceLabel.adjustsFontSizeToFitWidth = YES;
+    self.balanceLabel.minimumScaleFactor = 0.72;
     [self addSubview:self.balanceLabel];
 
     self.arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lira_profile_wallet_arrow"]];
@@ -66,7 +70,7 @@
         [self.coinImageView.heightAnchor constraintEqualToConstant:56],
 
         [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.coinImageView.trailingAnchor constant:24],
-        [self.titleLabel.topAnchor constraintEqualToAnchor:self.topAnchor constant:14],
+        [self.titleLabel.topAnchor constraintEqualToAnchor:self.topAnchor constant:24],
         [self.titleLabel.trailingAnchor constraintLessThanOrEqualToAnchor:self.arrowImageView.leadingAnchor constant:-12],
 
         [self.balanceLabel.leadingAnchor constraintEqualToAnchor:self.titleLabel.leadingAnchor],
@@ -89,7 +93,17 @@
 }
 
 - (void)configureWithUser:(LirauProfileUser *)user {
-    self.balanceLabel.text = user.walletBalance.length > 0 ? user.walletBalance : @"0";
+    NSString *balance = [self normalizedBalanceText:user.walletBalance];
+    self.balanceLabel.text = balance.length > 0 ? balance : @"0";
+    self.balanceLabel.accessibilityLabel = [NSString stringWithFormat:@"LiraU wallet balance %@", self.balanceLabel.text ?: @"0"];
+}
+
+- (NSString *)normalizedBalanceText:(NSString *)balance {
+    if (![balance isKindOfClass:NSString.class]) {
+        return @"0";
+    }
+    NSString *trimmed = [balance stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+    return trimmed.length > 0 ? trimmed : @"0";
 }
 
 @end

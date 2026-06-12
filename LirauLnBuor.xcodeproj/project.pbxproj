@@ -16,13 +16,14 @@
 		2A0000010000000000000007 /* LirauLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000107 /* LirauLoginViewController.swift */; };
 		2A0000010000000000000008 /* LirauRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000108 /* LirauRegisterViewController.swift */; };
 		2A0000010000000000000009 /* LirauProfileSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000109 /* LirauProfileSetupViewController.swift */; };
-		2A0000010000000000000010 /* LirauTermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000110 /* LirauTermsViewController.swift */; };
 		2A0000010000000000000011 /* LirauMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000111 /* LirauMainTabBarController.swift */; };
 		2A0000010000000000000013 /* LirauCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000113 /* LirauCommunityViewController.swift */; };
 		2A0000010000000000000016 /* LirauReusableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000116 /* LirauReusableViews.swift */; };
 		2A0000010000000000000017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000117 /* Assets.xcassets */; };
 		2A0000010000000000000018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000118 /* LaunchScreen.storyboard */; };
 		2A0000010000000000000019 /* LirauLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0000010000000000000119 /* LirauLaunchViewController.swift */; };
+		2A000001000000000000001A /* LirauWebPortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A000001000000000000011A /* LirauWebPortalViewController.swift */; };
+		2A000001000000000000001B /* LirauCipherText.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A000001000000000000011C /* LirauCipherText.m */; };
 		2B1000000000000000000001 /* LirauHomeModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000102 /* LirauHomeModels.m */; };
 		2B1000000000000000000002 /* LirauHomeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000104 /* LirauHomeManager.m */; };
 		2B1000000000000000000003 /* LirauHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1000000000000000000106 /* LirauHomeHeaderView.m */; };
@@ -46,6 +47,18 @@
 		2D1000000000000000000005 /* LirauProfileEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000110 /* LirauProfileEmptyView.m */; };
 		2D1000000000000000000006 /* LirauProfilePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000112 /* LirauProfilePostCell.m */; };
 		2D1000000000000000000007 /* LirauProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1000000000000000000114 /* LirauProfileViewController.m */; };
+		2E1000000000000000000001 /* LirauCommunityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000101 /* LirauCommunityModels.swift */; };
+		2E1000000000000000000002 /* LirauCommunityLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000102 /* LirauCommunityLocalStore.swift */; };
+		2E1000000000000000000003 /* LirauCommunityStyleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000103 /* LirauCommunityStyleViews.swift */; };
+		2E1000000000000000000004 /* LirauCommunityChallengeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000104 /* LirauCommunityChallengeCardView.swift */; };
+		2E1000000000000000000005 /* LirauCommunityChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000105 /* LirauCommunityChallengeDetailViewController.swift */; };
+		2E1000000000000000000006 /* LirauCommunitySubmitEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000106 /* LirauCommunitySubmitEntryViewController.swift */; };
+		2E1000000000000000000007 /* LirauCommunityCreateChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000107 /* LirauCommunityCreateChallengeViewController.swift */; };
+		2E1000000000000000000008 /* LirauCommunityResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000108 /* LirauCommunityResultViewController.swift */; };
+		2E1000000000000000000009 /* LirauCommunityMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1000000000000000000109 /* LirauCommunityMockData.swift */; };
+		2E100000000000000000000A /* LirauCommunityStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E100000000000000000010A /* LirauCommunityStateMachine.swift */; };
+		2E100000000000000000000B /* LirauCommunityCreateChallengeComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E100000000000000000010B /* LirauCommunityCreateChallengeComponents.swift */; };
+		2E100000000000000000000C /* LirauCommunitySubmitEntryComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E100000000000000000010C /* LirauCommunitySubmitEntryComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,13 +72,15 @@
 		2A0000010000000000000107 /* LirauLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauLoginViewController.swift; sourceTree = "<group>"; };
 		2A0000010000000000000108 /* LirauRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauRegisterViewController.swift; sourceTree = "<group>"; };
 		2A0000010000000000000109 /* LirauProfileSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauProfileSetupViewController.swift; sourceTree = "<group>"; };
-		2A0000010000000000000110 /* LirauTermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauTermsViewController.swift; sourceTree = "<group>"; };
 		2A0000010000000000000111 /* LirauMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauMainTabBarController.swift; sourceTree = "<group>"; };
 		2A0000010000000000000113 /* LirauCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityViewController.swift; sourceTree = "<group>"; };
 		2A0000010000000000000116 /* LirauReusableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauReusableViews.swift; sourceTree = "<group>"; };
 		2A0000010000000000000117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A0000010000000000000118 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A0000010000000000000119 /* LirauLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauLaunchViewController.swift; sourceTree = "<group>"; };
+		2A000001000000000000011A /* LirauWebPortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauWebPortalViewController.swift; sourceTree = "<group>"; };
+		2A000001000000000000011B /* LirauCipherText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauCipherText.h; sourceTree = "<group>"; };
+		2A000001000000000000011C /* LirauCipherText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauCipherText.m; sourceTree = "<group>"; };
 		2A0000010000000000000200 /* LirauLnBuor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LirauLnBuor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B1000000000000000000100 /* LirauLnBuor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LirauLnBuor-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B1000000000000000000101 /* LirauHomeModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauHomeModels.h; sourceTree = "<group>"; };
@@ -114,6 +129,18 @@
 		2D1000000000000000000112 /* LirauProfilePostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfilePostCell.m; sourceTree = "<group>"; };
 		2D1000000000000000000113 /* LirauProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LirauProfileViewController.h; sourceTree = "<group>"; };
 		2D1000000000000000000114 /* LirauProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LirauProfileViewController.m; sourceTree = "<group>"; };
+		2E1000000000000000000101 /* LirauCommunityModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityModels.swift; sourceTree = "<group>"; };
+		2E1000000000000000000102 /* LirauCommunityLocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityLocalStore.swift; sourceTree = "<group>"; };
+		2E1000000000000000000103 /* LirauCommunityStyleViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityStyleViews.swift; sourceTree = "<group>"; };
+		2E1000000000000000000104 /* LirauCommunityChallengeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityChallengeCardView.swift; sourceTree = "<group>"; };
+		2E1000000000000000000105 /* LirauCommunityChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityChallengeDetailViewController.swift; sourceTree = "<group>"; };
+		2E1000000000000000000106 /* LirauCommunitySubmitEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunitySubmitEntryViewController.swift; sourceTree = "<group>"; };
+		2E1000000000000000000107 /* LirauCommunityCreateChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityCreateChallengeViewController.swift; sourceTree = "<group>"; };
+		2E1000000000000000000108 /* LirauCommunityResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityResultViewController.swift; sourceTree = "<group>"; };
+		2E1000000000000000000109 /* LirauCommunityMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityMockData.swift; sourceTree = "<group>"; };
+		2E100000000000000000010A /* LirauCommunityStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityStateMachine.swift; sourceTree = "<group>"; };
+		2E100000000000000000010B /* LirauCommunityCreateChallengeComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunityCreateChallengeComponents.swift; sourceTree = "<group>"; };
+		2E100000000000000000010C /* LirauCommunitySubmitEntryComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LirauCommunitySubmitEntryComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +211,6 @@
 				2A0000010000000000000107 /* LirauLoginViewController.swift */,
 				2A0000010000000000000108 /* LirauRegisterViewController.swift */,
 				2A0000010000000000000109 /* LirauProfileSetupViewController.swift */,
-				2A0000010000000000000110 /* LirauTermsViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -195,6 +221,7 @@
 				2A0000010000000000000111 /* LirauMainTabBarController.swift */,
 				2B1000000000000000000200 /* Home */,
 				2A0000010000000000000113 /* LirauCommunityViewController.swift */,
+				2E1000000000000000000200 /* Community */,
 				2C1000000000000000000200 /* Video */,
 				2D1000000000000000000200 /* Profile */,
 			);
@@ -214,6 +241,9 @@
 			children = (
 				2A0000010000000000000103 /* LirauTheme.swift */,
 				2A0000010000000000000116 /* LirauReusableViews.swift */,
+				2A000001000000000000011A /* LirauWebPortalViewController.swift */,
+				2A000001000000000000011B /* LirauCipherText.h */,
+				2A000001000000000000011C /* LirauCipherText.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -390,6 +420,25 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2E1000000000000000000200 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				2E1000000000000000000101 /* LirauCommunityModels.swift */,
+				2E1000000000000000000109 /* LirauCommunityMockData.swift */,
+				2E100000000000000000010A /* LirauCommunityStateMachine.swift */,
+				2E1000000000000000000102 /* LirauCommunityLocalStore.swift */,
+				2E1000000000000000000103 /* LirauCommunityStyleViews.swift */,
+				2E1000000000000000000104 /* LirauCommunityChallengeCardView.swift */,
+				2E1000000000000000000105 /* LirauCommunityChallengeDetailViewController.swift */,
+				2E1000000000000000000106 /* LirauCommunitySubmitEntryViewController.swift */,
+				2E100000000000000000010C /* LirauCommunitySubmitEntryComponents.swift */,
+				2E100000000000000000010B /* LirauCommunityCreateChallengeComponents.swift */,
+				2E1000000000000000000107 /* LirauCommunityCreateChallengeViewController.swift */,
+				2E1000000000000000000108 /* LirauCommunityResultViewController.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,7 +519,6 @@
 				2A0000010000000000000007 /* LirauLoginViewController.swift in Sources */,
 				2A0000010000000000000008 /* LirauRegisterViewController.swift in Sources */,
 				2A0000010000000000000009 /* LirauProfileSetupViewController.swift in Sources */,
-				2A0000010000000000000010 /* LirauTermsViewController.swift in Sources */,
 				2A0000010000000000000011 /* LirauMainTabBarController.swift in Sources */,
 				2B1000000000000000000008 /* LirauHomeViewController.m in Sources */,
 				2B1000000000000000000001 /* LirauHomeModels.m in Sources */,
@@ -489,6 +537,18 @@
 				2C1000000000000000000006 /* LirauVideoStateView.m in Sources */,
 				2C1000000000000000000007 /* LirauVideoCell.m in Sources */,
 				2A0000010000000000000013 /* LirauCommunityViewController.swift in Sources */,
+				2E1000000000000000000001 /* LirauCommunityModels.swift in Sources */,
+				2E1000000000000000000009 /* LirauCommunityMockData.swift in Sources */,
+				2E100000000000000000000A /* LirauCommunityStateMachine.swift in Sources */,
+				2E1000000000000000000002 /* LirauCommunityLocalStore.swift in Sources */,
+				2E1000000000000000000003 /* LirauCommunityStyleViews.swift in Sources */,
+				2E1000000000000000000004 /* LirauCommunityChallengeCardView.swift in Sources */,
+				2E1000000000000000000005 /* LirauCommunityChallengeDetailViewController.swift in Sources */,
+				2E1000000000000000000006 /* LirauCommunitySubmitEntryViewController.swift in Sources */,
+				2E100000000000000000000B /* LirauCommunityCreateChallengeComponents.swift in Sources */,
+				2E100000000000000000000C /* LirauCommunitySubmitEntryComponents.swift in Sources */,
+				2E1000000000000000000007 /* LirauCommunityCreateChallengeViewController.swift in Sources */,
+				2E1000000000000000000008 /* LirauCommunityResultViewController.swift in Sources */,
 				2D1000000000000000000007 /* LirauProfileViewController.m in Sources */,
 				2D1000000000000000000001 /* LirauProfileModels.m in Sources */,
 				2D1000000000000000000002 /* LirauProfileManager.m in Sources */,
@@ -497,6 +557,8 @@
 				2D1000000000000000000005 /* LirauProfileEmptyView.m in Sources */,
 				2D1000000000000000000006 /* LirauProfilePostCell.m in Sources */,
 				2A0000010000000000000016 /* LirauReusableViews.swift in Sources */,
+				2A000001000000000000001A /* LirauWebPortalViewController.swift in Sources */,
+				2A000001000000000000001B /* LirauCipherText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
